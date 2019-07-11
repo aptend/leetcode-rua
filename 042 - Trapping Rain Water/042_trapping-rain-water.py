@@ -8,7 +8,7 @@ class Q042(Solution):
         stack = [0]
         for i, h in enumerate(height[1:], 1):
             if h <= height[stack[-1]]:  # append same height, or it would be wrong 
-                                   # when it becomes the left boundary of a pool
+                                        # when it becomes the left boundary of a pool
                 stack.append(i)
                 continue
             while h > height[stack[-1]]:
