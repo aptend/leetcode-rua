@@ -19,33 +19,13 @@ class Q077(Solution):
         if depth == k:
             total.append(current[:])
             return
-        for i in range(start, len(nums)):
+        # say, nums=[1,2,3,4,5,6], k=4
+        # for 1st position, there's no need to try 4,5,6
+        # for 2nd position, there's no need to try 5,6
+        for i in range(start, len(nums) - (k-depth) + 1):
             current.append(nums[i])
             self.dfs(nums, k, depth+1, i+1, current, total)
             current.pop()
-
-    @timeit
-    @solution
-    def combine_from_lc(self, n, k):
-        def _combine(start, k_left, chosen, combinations):
-            if k_left == 0:
-                combinations.append(chosen[:])
-            else:
-                # We should iterate until the point when there are
-                # not enough values until `n` to fill `k_left` slots that we need.
-                # "+2" to account for range() stop condition, and other off-by-one.
-                i_when_not_enough_left = n - k_left + 2
-
-                for i in range(start, i_when_not_enough_left, 1):
-                    chosen.append(i)
-                    # Since `i` was chosen, make next call choose from i+1 onwards.
-                    _combine(i + 1, k_left - 1, chosen, combinations)
-                    chosen.pop()
-
-        combinations = []
-        _combine(1, k, [], combinations)
-        return combinations
-
 
 
 def main():
