@@ -35,7 +35,7 @@ class Q322(Solution):
             r = min(r, self.dfs(coins, amount - c, memo)+1)
         memo[amount] = r
         return r
-            
+
     @solution
     def coin_change_prune(self, coins, amount):
         least = [float('inf')]
@@ -51,9 +51,9 @@ class Q322(Solution):
         else:
             for k in range(amount // c, -1, -1):
                 if count + k >= least[0]:  # !!
-                    break 
+                    break
                 self.dfs_prune(coins, s+1, amount - k*c, count+k, least)
-    
+
     def dfs_prune_boilerplate(self, coins, s, amount, count, least):
         if s >= len(coins):
             if amount == 0:
@@ -63,9 +63,8 @@ class Q322(Solution):
         for k in range(amount // c, -1, -1):
             if count + k >= least[0]:
                 break
-            self.dfs_prune_boilerplate(coins, s+1, amount - k*c, count+k, least)
-
-
+            self.dfs_prune_boilerplate(
+                coins, s+1, amount - k*c, count+k, least)
 
 
 def main():

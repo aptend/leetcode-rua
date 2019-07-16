@@ -23,7 +23,7 @@ class Q377(Solution):
             total += self.soln(nums, target - n, memo)
         memo[target] = total
         return total
-    
+
     @solution
     def combination_sum(self, nums, target):
         if target < 0:
@@ -35,7 +35,6 @@ class Q377(Solution):
                 if n <= target:
                     dp[i] += dp[i - n]
         return dp[target]
-        
 
 
 def main():
