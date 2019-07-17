@@ -4,6 +4,9 @@ from leeyzer import Solution, solution
 class Q377(Solution):
     """my thoughts for the follow up question is stopping recursion when
      target is less than -(the max sum that nums can sum up to).
+
+    new idea. why not converting all numbers to positive by adding `abs(max_neg)`?
+    target += abs(max_neg) of course.
     """
     @solution
     def combinationSum4(self, nums, target):
