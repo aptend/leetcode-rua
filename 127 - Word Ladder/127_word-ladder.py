@@ -5,6 +5,7 @@ from collections import defaultdict, deque
 class Q127(Solution):
     @solution
     def ladderLength(self, beginWord, endWord, wordList):
+        # 140ms 61.49%
         if endWord not in wordList:
             return 0
         transform = defaultdict(set)
@@ -30,6 +31,7 @@ class Q127(Solution):
 
     @solution
     def ladder_bibfs(self, beginWord, endWord, wordList):
+        # 76ms 98.14%
         if endWord not in wordList:
             return 0
         transform = defaultdict(set)

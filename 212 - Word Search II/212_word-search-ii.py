@@ -3,6 +3,7 @@ from leeyzer import Solution, solution
 
 class Q212(Solution):
     """
+    292ms beats 92.04%
     用前缀字典代替trie
     jieba分词就是这么做的，效果还行
     """
