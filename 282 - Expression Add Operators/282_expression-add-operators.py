@@ -7,6 +7,7 @@ class Q282(Solution):
         # 792ms 82.73%
         # using 227 basic-calculator-ii
         total = []
+
         def dfs(start, val, accum, expr):
             if start == len(num):
                 if val + accum == target:
@@ -27,6 +28,32 @@ class Q282(Solution):
                     dfs(i+1, val, accum*x, expr+'*'+str_x)
         dfs(0, 0, 0, '')
         return total
+
+    def addOperators_tle(self, num, target):
+        if num == '':
+            return []
+        total = []
+        self.dfs_tle(num, target, 0, '', total)
+        return total
+
+    def dfs_tle(self, nums, target, start, expr, total):
+        if start == len(nums):
+            if self.is_valid_soln(expr, target):
+                total.append(expr)
+            return
+        cur_part = ''
+        for i in range(start, len(nums)):
+            cur_part += nums[i]
+            if i > start and cur_part[0] == '0':
+                break
+            if i == len(nums) - 1:
+                self.dfs_tle(nums, target, i+1, expr+cur_part, total)
+            else:
+                for op in '-+*':
+                    self.dfs_tle(nums, target, i+1, expr+cur_part+op, total)
+
+    def is_valid_soln(self, expr, target):
+        return eval(expr) == target
 
 
 def main():
