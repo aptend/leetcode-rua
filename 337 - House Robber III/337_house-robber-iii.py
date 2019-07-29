@@ -7,16 +7,17 @@ class Q337(Solution):
     def rob(self, root):
         # 36ms 48ms
         memo = {}
+
         def _rob(node):
             if node is None:
                 return 0
             if node in memo:
                 return memo[node]
             ll = lr = rl = rr = 0
-            if node.left: 
+            if node.left:
                 ll = _rob(node.left.left)
                 lr = _rob(node.left.right)
-            if node.right: 
+            if node.right:
                 rl = _rob(node.right.left)
                 rr = _rob(node.right.right)
             rob_node = node.val + ll + lr + rl + rr
@@ -32,15 +33,13 @@ class Q337(Solution):
         def rob_(node):
             if node is None:
                 return 0, 0
-            # a subtree rooting at node.left
+            # consider a subtree rooting at node.left
             # l: maximum with robbing node.left
-            # nol: maximum without robbing node.left 
+            # nol: maximum without robbing node.left
             l, nol = rob_(node.left)
             r, nor = rob_(node.right)
             return node.val + nol + nor, max(l, nol) + max(r, nor)
         return max(rob_(root))
-            
-
 
 
 def main():
