@@ -4,6 +4,7 @@ from leeyzer.assists import TreeContext
 class Q099(Solution):
     @solution
     def recoverTree(self, root):
+        # 56ms / 68ms
         self.order = []
         def inorder(node):
             if node is None:
@@ -26,6 +27,7 @@ class Q099(Solution):
     
     @solution
     def recover(self, root):
+        # 48ms 90.40%
         self.prev = None
         inv = []
         def inorder(node):
