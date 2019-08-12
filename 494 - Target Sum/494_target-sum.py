@@ -4,6 +4,7 @@ from leeyzer import Solution, solution
 class Q494(Solution):
     @solution
     def push_v1(self, nums, S):
+        # 516ms
         total = sum(nums)
         if total < abs(S):
             return 0
@@ -21,28 +22,8 @@ class Q494(Solution):
         return dp[S+offset]
 
     @solution
-    def push_v2(self, nums, S):
-        total = sum(nums)
-        if total < abs(S):
-            return 0
-        offset, capacity = total, total * 2 + 1
-        dp = [0] * capacity
-        dp[offset] = 1
-        for n in nums:
-            cur_dp = [0] * capacity
-            # dp两侧第一个非零数，一定是1，索引为前k个数的sum、-sum
-            # 随着迭代，两边的1向外扩张，直到最后一个n，设为n'，
-            # dp[n'], dp[capacity-n']为1，所以对任意n，都有
-            # dp[0, n]、dp[capacity-n, capacity]为0，对push没有贡献
-            for i in range(n, capacity-n):
-                if dp[i]:
-                    cur_dp[i-n] += dp[i]
-                    cur_dp[i+n] += dp[i]
-            dp = cur_dp
-        return dp[S+offset]
-
-    @solution
     def pull(self, nums, S):
+        # 500ms 16%
         total = sum(nums)
         if total < abs(S):
             return 0
@@ -60,7 +41,30 @@ class Q494(Solution):
         return dp[S+offset]
 
     @solution
-    def sack01_push(self, nums, S):
+    def push_v2(self, nums, S):
+        # 172ms 74.86%
+        total = sum(nums)
+        if total < abs(S):
+            return 0
+        offset, capacity = total, total * 2 + 1
+        dp = [0] * capacity
+        dp[offset] = 1
+        for n in nums:
+            cur_dp = [0] * capacity
+            # dp两侧第一个非零数，一定是1，索引为前k个数的sum、-sum
+            # 随着迭代，两边的1向外扩张，直到最后一个n，设为n'，
+            # dp[n'], dp[capacity-n']为1，所以对任意n，都有
+            # dp[0->n]、dp[capacity-n -> capacity]为0，对push没有贡献
+            for i in range(n, capacity-n):
+                if dp[i]:
+                    cur_dp[i-n] += dp[i]
+                    cur_dp[i+n] += dp[i]
+            dp = cur_dp
+        return dp[S+offset]
+
+    @solution
+    def knapsack01_push(self, nums, S):
+        # 64ms
         total = sum(nums)
         if total < abs(S) or (abs(S)+total) % 2 == 1:
             return 0
@@ -75,7 +79,8 @@ class Q494(Solution):
         return dp[subset_s]
 
     @solution
-    def sack01_pull(self, nums, S):
+    def knapsack01_pull(self, nums, S):
+        # 60ms
         total = sum(nums)
         if total < abs(S) or (abs(S)+total) % 2 == 1:
             return 0
@@ -90,7 +95,8 @@ class Q494(Solution):
         return dp[subset_s]
 
     @solution
-    def sack01_pull_rev(self, nums, S):
+    def knapsack01_pull_rev(self, nums, S):
+        # 60ms 96.43%
         total = sum(nums)
         if total < abs(S) or (abs(S)+total) % 2 == 1:
             return 0
@@ -105,6 +111,7 @@ class Q494(Solution):
 
     @solution
     def dfs(self, nums, S):
+        # TLE
         def _dfs(nums, depth, target, output):
             if depth == len(nums):
                 if target == 0:
@@ -119,7 +126,6 @@ class Q494(Solution):
         output = [0]
         _dfs(nums, 0, S, output)
         return output[0]
-
 
 
 def main():
