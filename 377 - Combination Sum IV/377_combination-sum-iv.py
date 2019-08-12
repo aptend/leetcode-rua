@@ -10,6 +10,7 @@ class Q377(Solution):
     """
     @solution
     def combinationSum4(self, nums, target):
+        # 28ms 76.88%
         memo = {}
         nums = sorted(nums)
         return self.soln(nums, target, memo)
@@ -29,9 +30,11 @@ class Q377(Solution):
 
     @solution
     def combination_sum(self, nums, target):
+        # 28ms
         if target < 0:
             return 0
-        # dp[i]: how many ways to sum up to target using nums
+        # dp[i]: how many ways to sum up to target i using nums
+        # `70 climbing stairs` is a special case of this problem
         dp = [1] + [0]*target
         for i in range(1, target+1):
             for n in nums:
@@ -47,6 +50,7 @@ def main():
     q.add_args([1, 2, 3], -1)
     q.add_args([5, 2, 3], 1)
     q.add_args([1, 2, 5], 5)
+    q.add_args([1, 2], 6)
     q.run()
 
 
