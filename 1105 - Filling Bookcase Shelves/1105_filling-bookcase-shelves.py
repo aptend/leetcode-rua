@@ -4,17 +4,22 @@ from leeyzer import Solution, solution
 class Q1105(Solution):
     @solution
     def minHeightShelves(self, books, shelf_width):
-        N = len(books)
-        dp = [float('inf')] * N + [0]
-        for j in range(N):
+        # 40ms 50.20%
+        N, MAX = len(books), float('inf')
+        # dp[i] means min height after placing books[:i]
+        dp = [MAX] * (N+1)
+        dp[0] = 0
+        for i in range(1, N+1):
             w, h = 0, 0
-            for i in range(j, -1, -1):
-                w += books[i][0]
+            # the last n books are placed on the same level
+            for n in range(1, i+1):
+                w += books[i-n][0]
                 if w > shelf_width:
                     break
-                h = max(h, books[i][1])
-                dp[j] = min(dp[j], dp[i-1]+h)
-        return dp[N-1]
+                h = max(h, books[i-n][1])
+                dp[i] = min(dp[i], dp[i-n]+h)
+        return dp[N]
+
 
     @solution
     def min_height(self, books, shelf_width):
