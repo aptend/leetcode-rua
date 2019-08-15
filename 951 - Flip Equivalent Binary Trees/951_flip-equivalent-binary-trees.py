@@ -7,6 +7,15 @@ class Q951(Solution):
     def flipEquiv(self, root1, root2):
         # 16ms 86.76ms
         # but how about time complexity?
+        # https://www.wikiwand.com/en/Master_theorem_(analysis_of_algorithms)
+        # we can say that a subproblem costs T(n) only when root1.val == root2.val
+        # because each value in tree is unique,
+        # there are at most 2 T(n/2) subproblem among the 4 subproblem
+        # the recurrence relation can be expressed by
+        # T(n) = 2T(n/2) + O(1) -> O(n) -> O(min(N1, N2))
+        # on the other hand, if each value is not unique:
+        # T(n) = 4T(n/2) + O(1) -> O(min(N1, N2)^2)
+
         if not root1 and not root2:
             return True
         if root1 is None or root2 is None or root1.val != root2.val:
