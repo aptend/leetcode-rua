@@ -34,16 +34,33 @@ class Solution:
             nxt_lvl.clear()
         return root
 
-    def connect_recur(self, root):
+    def connect_preorder(self, root):
         # 76ms
         if root is None or root.left is None:
             return
         root.left.next = root.right
         if root.next:
             root.right.next = root.next.left
-        self.connect_recur(root.left)
-        self.connect_recur(root.right)
+        self.connect_preorder(root.left)
+        self.connect_preorder(root.right)
         return root
+    
+    def connect_postorder(self, root):
+        # 72ms
+        # time complexity could be inferred by Akra–Bazzi theorem
+        # approximately linear
+        def link_tree(node1, node2):
+            while node1 and node2:
+                node1.next = node2
+                node1 = node1.right
+                node2 = node2.left
+
+        if root is None:
+            return None
+        left = self.connect_postorder(root.left)
+        right = self.connect_postorder(root.right)
+        link_tree(left, right)
+
 
 
 def main():
