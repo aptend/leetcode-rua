@@ -6,7 +6,6 @@ class Q787(Solution):
     @solution
     def findCheapestPrice(self, n, flights, src, dst, K):
         # 80ms 63.63%
-        # Is this solution REALLY Dijkstra？
         edge = namedtuple('edge', 'from_ to weight')
         graph = [[] for _ in range(n)]
         for f in flights:
@@ -18,9 +17,10 @@ class Q787(Solution):
                 return cost
             if k:
                 for e in graph[city]:
+                    # we save every possible cost for dist_to[v]
                     heappush(heap, (cost+e.weight, e.to, k-1))
         return -1
-    
+
     @solution
     def cheapest_flight(self, n, flights, src, dst, K):
         # 140ms
