@@ -2,34 +2,95 @@ from leeyzer import Solution, solution
 
 
 class Q084(Solution):
+    """Ref to 901. Online Stock span
+    """
     @solution
     def largestRectangleArea(self, heights):
-        # 一开始的分类不对，这样代表以当前条柱开始的长方形
-        # 所以[2, 1, 2]这样的的图，最长的不是以1开始的长方形
-        # 而是以1为高的长方形
-        # 所以记录了一个width，当前条左边有多少个比它大的
-        stack = [0]
-        left_higher = [0] * (len(heights)+1)
-        max_area = 0
-        heights = heights + [0]
-        for i, h in enumerate(heights[1:], 1):
-            while stack and heights[stack[-1]] > h:
-                j = stack.pop()
-                width = i - j + left_higher[j]
-                area = heights[j] * width
-                left_higher[i] = width
-                max_area = max(max_area, area)
+        # TLE 
+        # tests passed: 94/96
+        # the basic idea is to try every max rectangle having height[i]
+        # what we need to kown is,
+        #  how many continuous bars are `ge` than height[i] on its left
+        #  how many continuous bars are `ge` than height[i] on its right
+        ans = 0
+        for i, h in enumerate(heights):
+            l_cnt = r_cnt = 0
+            for j in range(i-1, -1, -1):
+                if heights[j] >= h:
+                    l_cnt += 1
+                else:
+                    break
+            
+            for j in range(i+1, len(heights)):
+                if heights[j] >= h:
+                    r_cnt += 1
+                else:
+                    break
+            ans = max(ans, h * (1 + l_cnt + r_cnt))
+        return ans
+
+    @solution
+    def largest_rect_area(self, heights):
+        # 108ms 14.33%
+        # let's use `jump list` to compute the info that we need in advance
+        N = len(heights)
+        # left[i] means how many bars `ge` than heights[i] on its left
+        # we can reuse the infomation of left[]
+        left = [0] * N
+        for i in range(N):
+            j = i
+            while j >= 0 and heights[j] >= heights[i]:
+                j = j - left[j] - 1
+            left[i] = i - j - 1
+        right = [0] * N
+        for i in range(N-1, -1, -1):
+            j = i
+            while j < N and heights[j] >= heights[i]:
+                j = j + right[j] + 1
+            right[i] = j - i - 1
+        ans = 0
+        for i, h in enumerate(heights):
+            ans = max(ans, h * (1 + left[i] + right[i]))
+        return ans
+
+    @solution
+    def largest_rect_area_stack(self, heights):
+        # 108ms
+        # we can also use monotonic stack to find `left` and `right`
+        N = len(heights)
+        stack = []
+        left = [0] * N
+        for i in range(N):
+            while stack and heights[stack[-1]] >= heights[i]:
+                stack.pop()
+            # when while loop exited, we know that heights[stack[-1]] < heights[i]
+            # which is left boundary, we can calculate how many hihger bars on the left
+            left[i] = i - stack[-1] - 1 if stack else i
             stack.append(i)
-        return max_area
+        stack = []
+        right = [0] * N
+        for i in range(N-1, -1, -1):
+            while stack and heights[stack[-1]] >= heights[i]:
+                stack.pop()
+            right[i] = stack[-1] - i - 1 if stack else N-1-i
+            stack.append(i)
+        ans = 0
+        for i, h in enumerate(heights):
+            ans = max(ans, h * (1 + left[i] + right[i]))
+        return ans
+
 
     @solution
     def largest_area(self, heights):
-        # 实际上width等于栈中左边条的索引值，因为每次循环都把左边比它大的pop掉，不用再重复记录
-        heights = heights + [0]
-        stack = [-1] # 利用python的-1索引
+        # 88ms 77.03%
+        heights = heights + [0] # append a 0 height, make sure to pop every bar
+        stack = [-1] # 
         max_area = 0
         for i, h in enumerate(heights):
-            while stack and heights[stack[-1]] > h:
+            while heights[stack[-1]] > h:
+                # actually, when we encounter a smaller bar, this is a right boundry
+                # every higher bar 'h_x' in the stack could be popped and 
+                # calculated the max rect with height 'h_x'
                 j = stack.pop()
                 width = i - stack[-1] - 1
                 area = heights[j] * width
@@ -43,7 +104,7 @@ def main():
     q = Q084()
     q.add_args([1])
     q.add_args([2, 1, 2]) # 3
-    q.add_args([3,6,5,7,4,8,1,0]) # 20
+    q.add_args([3, 6, 5, 7, 4, 8, 1, 0]) # 20
     q.add_args([2, 1, 5, 6, 2, 3]) # 10
     q.add_args([2, 7, 1, 8, 8, 3, 11, 12, 13, 3]) # 33
     q.run()
