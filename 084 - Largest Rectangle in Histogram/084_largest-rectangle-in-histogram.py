@@ -88,7 +88,8 @@ class Q084(Solution):
         max_area = 0
         for i, h in enumerate(heights):
             while heights[stack[-1]] > h:
-                # actually, when we encounter a smaller bar, this is a right boundry
+                # actually, when we encounter a smaller (not including equal) bar,
+                # this is a right boundry
                 # every higher bar 'h_x' in the stack could be popped and 
                 # calculated the max rect with height 'h_x'
                 j = stack.pop()
