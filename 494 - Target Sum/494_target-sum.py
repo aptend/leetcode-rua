@@ -66,8 +66,12 @@ class Q494(Solution):
     def knapsack01_push(self, nums, S):
         # 64ms
         total = sum(nums)
+        # A + B = total
+        # A - B = S or B - A = S [S = abs(S)]
+        # abs(s) + total is positive, making it accurate for % operation
         if total < abs(S) or (abs(S)+total) % 2 == 1:
             return 0
+        # total + abs(S) is also OK
         subset_s = (total + S) // 2
         dp = [0] * (subset_s + 1)
         dp[0] = 1
