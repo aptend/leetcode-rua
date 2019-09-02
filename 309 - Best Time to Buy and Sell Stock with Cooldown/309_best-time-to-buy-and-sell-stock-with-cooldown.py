@@ -4,16 +4,21 @@ from leeyzer import Solution, solution
 class Q309(Solution):
     @solution
     def maxProfit(self, prices):
-        # dp[i] max profit until i^{th} day when last transcation is:
-        # 0: buying
-        # 1: selling
+        # 20ms 93.04%
+        # hold[i] means max profit until ith day when holding a stack
+        # free[i] means max profit until ith day when free to buy a stock
+
         N = len(prices)
-        dp = [[0, 0] for _ in range(N)]
-        dp.append([float('-inf'), 0])
-        for i, p in enumerate(prices):
-            dp[i][0] = max(dp[i-1][0], dp[i-2][1] - p)
-            dp[i][1] = max(dp[i-1][1], dp[i-1][0] + p)
-        return max(dp[N-1][0], dp[N-1][1], 0)
+        MIN = float('-inf')
+        hold = [0] * (N+1)
+        free = hold[:]
+
+        hold[0] = MIN
+        for i in range(1, N+1):
+            p = prices[i-1]
+            hold[i] = max(hold[i-1], free[i-2]-p)
+            free[i] = max(free[i-1], hold[i-1]+p)
+        return max(hold[N], free[N])
 
 
 
