@@ -4,6 +4,9 @@ from leeyzer import Solution, solution
 class Q301(Solution):
     @solution
     def removeInvalidParentheses(self, s):
+        # the solution for 921 - Minimum Add to Make Parentheses Valid
+        # according to the proof of 921, 
+        # it's easy to kown minimum add == minimum delete
         left = right = 0
         for c in s:
             if c == '(':
