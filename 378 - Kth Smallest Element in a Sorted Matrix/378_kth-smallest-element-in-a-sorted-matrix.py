@@ -1,5 +1,6 @@
 from leeyzer import Solution, solution
 
+from heapq import heappop, heappush
 from bisect import bisect_right
 
 class Q378(Solution):
@@ -54,6 +55,20 @@ class Q378(Solution):
             else:
                 lo = m + 1
         return lo
+
+    @solution
+    def kth_smallest_heap(self, matrix, k):
+        N = len(matrix)
+        heap = [(matrix[0][0], 0, 0)]
+        def push(i, j):
+            if i < N and j < N:
+                heappush(heap, (matrix[i][j], i, j))
+        for _ in range(k):
+            ans, i, j = heappop(heap)
+            push(i, j+1)
+            if j == 0:
+                push(i+1, 0)
+        return ans
 
 
 
