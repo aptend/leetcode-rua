@@ -1,5 +1,5 @@
-use std::collections::HashMap;
 use std::cmp::min;
+use std::collections::HashMap;
 
 pub fn max_number_of_balloons(text: String) -> i32 {
     let mut counter: HashMap<char, i32> = HashMap::new();
@@ -7,10 +7,10 @@ pub fn max_number_of_balloons(text: String) -> i32 {
         *counter.entry(ch).or_insert(0) += 1
     }
     let mut ans = text.len() as i32;
-    for ch in "ban".chars(){
+    for ch in "ban".chars() {
         ans = min(ans, *counter.get(&ch).unwrap_or(&0));
-    }   
-    for ch in "lo".chars(){
+    }
+    for ch in "lo".chars() {
         ans = min(ans, *counter.get(&ch).unwrap_or(&0) / 2);
     }
     ans
