@@ -2,6 +2,7 @@
 #![allow(dead_code)]
 
 mod n491_increasing_subsequences;
+mod n494_target_sum;
 mod n560_subarray_sum_equals_k;
 mod n1189_maximum_number_of_ballons;
 mod n1190_reverse_substrings_between_each_pair_of_parentheses;
