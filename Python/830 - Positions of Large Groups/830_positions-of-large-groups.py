@@ -4,7 +4,6 @@ from leeyzer import Solution, solution
 class Q830(Solution):
     @solution
     def largeGroupPositions(self, S):
-        pass
         # 48ms 50.57%
         N = len(S)
         ans = []
