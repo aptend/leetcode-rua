@@ -3,7 +3,7 @@ pub fn can_make_pali_queries(s: String, queries: Vec<Vec<i32>>) -> Vec<bool> {
     let mut map: Vec<u32> = vec![0; s.len() + 1];
     let mut tmp: u32 = 0;
     for (i, ch) in (1..).zip(s.chars()) {
-        tmp ^= 1 << (ch as u8 - 'a' as u8);
+        tmp ^= 1 << (ch as u8 - b'a');
         map[i] = tmp;
     }
     for q in queries.iter() {

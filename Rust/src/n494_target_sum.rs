@@ -25,7 +25,7 @@ fn find_target_sum_ways_push(nums: Vec<i32>, s: i32) -> i32 {
     let mut dp = vec![0; (target + 1) as usize];
     dp[0] = 1;
     for x in nums.iter() {
-        for t in (0..=(target-x)).rev() {
+        for t in (0..=(target - x)).rev() {
             dp[(t + x) as usize] += dp[t as usize];
         }
     }

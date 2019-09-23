@@ -2,7 +2,7 @@
 use std::collections::HashSet;
 use std::i32::MIN;
 
-fn dfs(nums: &Vec<i32>, s: usize, cur: &mut Vec<i32>, total: &mut Vec<Vec<i32>>){
+fn dfs(nums: &[i32], s: usize, cur: &mut Vec<i32>, total: &mut Vec<Vec<i32>>){
     if cur.len() >= 3 {
         total.push(cur[1..].to_owned());
     }

@@ -8,7 +8,7 @@ pub fn nth_ugly_number(n: i32, a: i32, b: i32, c: i32) -> i32 {
         x
     }
 
-    let (n, a, b, c) = (n as i64, a as i64, b as i64, c as i64);
+    let (n, a, b, c) = (i64::from(n), i64::from(a), i64::from(b), i64::from(c));
     let ab = a * b / gcd(a, b);
     let ac = a * c / gcd(a, c);
     let bc = b * c / gcd(b, c);
@@ -20,7 +20,7 @@ pub fn nth_ugly_number(n: i32, a: i32, b: i32, c: i32) -> i32 {
     let mut hi = 2e9 as i32 + 1;
     while lo <= hi {
         let mid = lo + (hi - lo) / 2;
-        if small_cnt(mid as i64) >= n {
+        if small_cnt(i64::from(mid)) >= n {
             hi = mid - 1;
         } else {
             lo = mid + 1;
@@ -28,9 +28,6 @@ pub fn nth_ugly_number(n: i32, a: i32, b: i32, c: i32) -> i32 {
     }
     lo
 }
-
-
-
 
 #[test]
 fn test_1201() {

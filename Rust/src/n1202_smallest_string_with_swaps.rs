@@ -7,7 +7,7 @@ pub fn smallest_string_with_swaps(s: String, pairs: Vec<Vec<i32>>) -> String {
     }
 
     let mut state = vec![0; N];
-    fn dfs(state: &mut Vec<i32>, cc: &mut Vec<usize>, adj: &Vec<Vec<usize>>, v: usize) {
+    fn dfs(state: &mut Vec<i32>, cc: &mut Vec<usize>, adj: &[Vec<usize>], v: usize) {
         if state[v] == 1 {
             return;
         }

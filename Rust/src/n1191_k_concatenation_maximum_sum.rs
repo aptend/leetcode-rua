@@ -27,10 +27,12 @@ pub fn k_concatenation_max_sum(arr: Vec<i32>, k: i32) -> i32 {
     g_max
 }
 
-
 #[test]
 fn test_1191() {
     assert_eq!(9, k_concatenation_max_sum(vec![1, 2], 3));
     assert_eq!(0, k_concatenation_max_sum(vec![-1, -2], 3));
-    assert_eq!(20, k_concatenation_max_sum(vec![-2, -5, 0, 0, 3, 9, -5, -2, 4], 5));
+    assert_eq!(
+        20,
+        k_concatenation_max_sum(vec![-2, -5, 0, 0, 3, 9, -5, -2, 4], 5)
+    );
 }
