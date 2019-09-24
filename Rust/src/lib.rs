@@ -1,6 +1,9 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
+
+mod bisect;
+
 mod n491_increasing_subsequences;
 mod n494_target_sum;
 mod n560_subarray_sum_equals_k;
