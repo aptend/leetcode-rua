@@ -11,11 +11,7 @@ class Node:
 
 
 class Solution:
-    def connect_iter(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+    def connect_iter_linear_space(self, root):
         # 64ms 92.43%
         if root is None:
             return None
@@ -32,6 +28,22 @@ class Solution:
             nxt_lvl.append(None)
             cur_lvl, nxt_lvl = nxt_lvl, cur_lvl
             nxt_lvl.clear()
+        return root
+
+    def connect_iter_constant_space(self, root):
+        # 60ms 98.54%
+        node = root
+        dummy = tail = Node(-42, None, None, None)
+        while node and node.left:
+            tail.next = node.left
+            tail = tail.next
+            tail.next = node.right
+            tail = tail.next
+            # we have reached the end of this level
+            node = node.next
+            if not node:
+                tail = dummy
+                node = dummy.next  # move to next level
         return root
 
     def connect_preorder(self, root):
