@@ -8,6 +8,7 @@ mod n204_count_primes;
 mod n491_increasing_subsequences;
 mod n494_target_sum;
 mod n560_subarray_sum_equals_k;
+mod n795_number_of_subarrays_with_bounded_maximum;
 mod n905_sort_array_by_parity;
 mod n1177_can_make_palindrome_from_substring;
 mod n1189_maximum_number_of_ballons;
