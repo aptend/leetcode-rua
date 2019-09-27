@@ -4,6 +4,7 @@
 
 mod bisect;
 
+mod n204_count_primes;
 mod n491_increasing_subsequences;
 mod n494_target_sum;
 mod n560_subarray_sum_equals_k;
