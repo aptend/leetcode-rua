@@ -7,6 +7,7 @@ mod bisect;
 mod n204_count_primes;
 mod n491_increasing_subsequences;
 mod n494_target_sum;
+mod n557_reverse_words_in_a_string_iii;
 mod n560_subarray_sum_equals_k;
 mod n795_number_of_subarrays_with_bounded_maximum;
 mod n905_sort_array_by_parity;
