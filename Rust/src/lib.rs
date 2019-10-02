@@ -19,3 +19,6 @@ mod n1191_k_concatenation_maximum_sum;
 mod n1200_minimum_absolute_difference;
 mod n1201_ugly_number_iii;
 mod n1202_smallest_string_with_swaps;
+mod n0442_find_all_duplicates_in_an_array;
+mod n0213_house_robber_ii;
+mod n0090_subsets_ii;
