@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
-
+#![allow(clippy::needless_range_loop)]
 
 mod bisect;
 
@@ -22,3 +22,6 @@ mod n1202_smallest_string_with_swaps;
 mod n0442_find_all_duplicates_in_an_array;
 mod n0213_house_robber_ii;
 mod n0090_subsets_ii;
+mod n0290_word_pattern;
+mod n0313_super_ugly_number;
+mod n0918_maximum_sum_circular_subarray;
