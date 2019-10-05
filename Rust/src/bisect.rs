@@ -2,7 +2,7 @@
 use std::cmp::Ordering::{Greater, Less};
 use std::cmp::PartialOrd;
 
-trait Bisect {
+pub trait Bisect {
     type Item;
     fn bisect_right(&self, target: Self::Item) -> usize;
     fn bisect_left(&self, target: Self::Item) -> usize;

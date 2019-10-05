@@ -27,3 +27,6 @@ mod n0313_super_ugly_number;
 mod n0918_maximum_sum_circular_subarray;
 mod n0646_maximum_length_of_pair_chain;
 mod n0869_reordered_power_of_2;
+mod n0991_broken_calculator;
+mod n0870_advantage_shuffle;
+mod n0825_friends_of_appropriate_ages;
