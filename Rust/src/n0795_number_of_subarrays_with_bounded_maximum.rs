@@ -2,10 +2,10 @@ pub fn num_subarray_bounded_max(a: Vec<i32>, l: i32, r: i32) -> i32 {
     let mut ans = 0;
     let mut dp = 0;
     let mut prev = -1;
-    for i in 0..a.len() {
-        if a[i] < l {
+    for (i, &x) in a.iter().enumerate() {
+        if x < l {
             ans += dp;
-        } else if a[i] > r {
+        } else if x > r {
             dp = 0;
             prev = i as i32;
         } else {

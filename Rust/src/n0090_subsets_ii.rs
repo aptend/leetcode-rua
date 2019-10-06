@@ -1,5 +1,5 @@
 // use std::collections::HashSet;
-pub fn dfs(nums: &Vec<i32>, start: usize, cur: &mut Vec<i32>, total: &mut Vec<Vec<i32>>) {
+pub fn dfs(nums: &[i32], start: usize, cur: &mut Vec<i32>, total: &mut Vec<Vec<i32>>) {
     total.push(cur.clone());
     // let mut used = HashSet::new();
     for i in start..nums.len() {

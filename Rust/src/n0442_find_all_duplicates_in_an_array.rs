@@ -1,3 +1,4 @@
+#[allow(clippy::needless_range_loop)]
 pub fn find_duplicates(nums: Vec<i32>) -> Vec<i32> {
     let mut nums = nums;
     let mut ans = vec![];

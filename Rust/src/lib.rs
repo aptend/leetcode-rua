@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
-#![allow(clippy::needless_range_loop)]
+
 
 mod bisect;
 

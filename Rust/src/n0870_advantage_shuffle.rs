@@ -16,9 +16,9 @@ pub fn advantage_count(a: Vec<i32>, b: Vec<i32>) -> Vec<i32> {
             stash.push(x);
         }
     }
-    for i in 0..N {
-        if ans[i] == -1 {
-            ans[i] = stash.pop().unwrap();
+    for x in ans.iter_mut() {
+        if *x == -1 {
+            *x = stash.pop().unwrap();
         }
     }
     ans

@@ -1,5 +1,6 @@
 use std::collections::{HashMap, HashSet};
 
+#[allow(clippy::map_entry)]
 pub fn word_pattern(pattern: String, str: String) -> bool {
     let word_list: Vec<&str> = str.split(' ').collect();
     if pattern.len() != word_list.len() {
