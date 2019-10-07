@@ -9,7 +9,7 @@ use std::fs;
 use std::io::Write;
 use std::path::Path;
 
-const GRAPHQL_URL: &str = "https://leetcode.com/graphql";
+const GRAPHQL_URL: &str = "https://leetcode-cn.com/graphql";
 const QUESTION_QUERY_STRING: &str = r#"
 query questionData($titleSlug: String!) {
     question(titleSlug: $titleSlug) {
