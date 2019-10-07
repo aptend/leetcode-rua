@@ -35,3 +35,4 @@ mod n1219_path_with_maximum_gold;
 mod n1218_longest_arithmetic_subsequence_of_given_difference;
 mod n1217_play_with_chips;
 mod n0003_longest_substring_without_repeating_characters;
+mod n1213_intersection_of_three_sorted_arrays;
