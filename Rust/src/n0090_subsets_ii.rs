@@ -7,9 +7,11 @@ pub fn dfs(nums: &[i32], start: usize, cur: &mut Vec<i32>, total: &mut Vec<Vec<i
         //     continue;
         // }
         // used.insert(nums[i]);
-        if i > start && nums[i] == nums[i-1] { continue }
+        if i > start && nums[i] == nums[i - 1] {
+            continue;
+        }
         cur.push(nums[i]);
-        dfs(nums, i+1, cur, total);
+        dfs(nums, i + 1, cur, total);
         cur.pop();
     }
 }
@@ -25,5 +27,8 @@ pub fn subsets_with_dup(nums: Vec<i32>) -> Vec<Vec<i32>> {
 
 #[test]
 fn test_90() {
-    assert_eq!(vec![vec![], vec![1], vec![1,1]], subsets_with_dup(vec![1, 1]));
+    assert_eq!(
+        vec![vec![], vec![1], vec![1, 1]],
+        subsets_with_dup(vec![1, 1])
+    );
 }

@@ -6,14 +6,13 @@ pub fn count_primes(n: i32) -> i32 {
         if !prime_map[i] {
             continue;
         }
-        for j in (i*i..N).step_by(i) {
+        for j in (i * i..N).step_by(i) {
             prime_map[j] = false;
         }
     }
     let ans = prime_map.iter().skip(2).filter(|&p| *p).count();
     ans as i32
 }
-
 
 #[test]
 fn test_nxx() {

@@ -5,7 +5,7 @@ pub fn rob(nums: Vec<i32>) -> i32 {
         let mut dp1 = 0;
         for x in houses.iter() {
             let tmp = dp1;
-            dp1 = max(dp0+x, dp1);
+            dp1 = max(dp0 + x, dp1);
             dp0 = tmp;
         }
         dp1
@@ -14,7 +14,7 @@ pub fn rob(nums: Vec<i32>) -> i32 {
     match N {
         0 => 0,
         1 => nums[0],
-        _ => max(_rob(&nums[..N-1]), _rob(&nums[1..]))
+        _ => max(_rob(&nums[..N - 1]), _rob(&nums[1..])),
     }
 }
 

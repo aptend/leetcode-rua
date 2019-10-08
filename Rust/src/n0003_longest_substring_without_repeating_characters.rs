@@ -6,7 +6,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     for (i, ch) in s.chars().enumerate() {
         if seen.contains_key(&ch) {
             ans = max(ans, i as i32 - j);
-            j = max(j, seen[&ch]+1);
+            j = max(j, seen[&ch] + 1);
         }
         seen.insert(ch, i as i32);
     }
