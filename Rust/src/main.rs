@@ -22,7 +22,7 @@ query questionData($titleSlug: String!) {
 }"#;
 const QUESTION_QUERY_OPERATION: &str = "questionData";
 
-const ENTRY_JSON_PATH: &str = r#"C:\Users\cresc\AppData\Local\Temp\leeyzer_problems.json"#;
+const ENTRY_JSON: &str = r#"leeyzer_problems.json"#;
 
 const TEST_TMPL: &str = r#"
 
@@ -72,7 +72,10 @@ fn main() {
         .parse()
         .unwrap_or_else(|_| panic!("{} is not a number", &id_arg));
 
-    let repo_json = fs::read_to_string(ENTRY_JSON_PATH).unwrap();
+    let mut json_path = std::env::temp_dir();
+    json_path.push(ENTRY_JSON);
+
+    let repo_json = fs::read_to_string(json_path).unwrap();
     let entry_repo: HashMap<i32, ProblemEntry> = serde_json::from_str(&repo_json).unwrap();
 
     let entry = &entry_repo[&id];
