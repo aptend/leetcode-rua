@@ -18,6 +18,7 @@ mod n0646_maximum_length_of_pair_chain;
 mod n0696_count_binary_substrings;
 mod n0795_number_of_subarrays_with_bounded_maximum;
 mod n0818_race_car;
+mod n0820_short_encoding_of_words;
 mod n0825_friends_of_appropriate_ages;
 mod n0869_reordered_power_of_2;
 mod n0870_advantage_shuffle;
