@@ -26,6 +26,7 @@ mod n0870_advantage_shuffle;
 mod n0905_sort_array_by_parity;
 mod n0918_maximum_sum_circular_subarray;
 mod n0945_minimum_increment_to_make_array_unique;
+mod n0950_reveal_cards_in_increasing_order;
 mod n0967_numbers_with_same_consecutive_differences;
 mod n0991_broken_calculator;
 mod n1155_number_of_dice_rolls_with_target_sum;
