@@ -3,6 +3,7 @@ from leeyzer import Solution, solution
 from collections import Counter
 import itertools
 
+
 class Q923(Solution):
     @solution
     def threeSumMulti(self, A, target):
@@ -27,17 +28,15 @@ class Q923(Solution):
                     i += 1
                     j -= 1
 
-            # use two B[k]
-            n = cnt[B[k]]
-            x = target - B[k] * 2
-            if x != B[k] and x in cnt:
-                ans += cnt[x] * (n * (n-1) // 2)
-
             # all three are B[k]
-            if x == B[k] and n >= 3:
+            n = cnt[B[k]]
+            if 3 * B[k] == target:
                 ans += n * (n-1) * (n-2) // 6
+            # use two B[k]
+            elif target - B[k] * 2 in cnt:
+                ans += cnt[target - B[k] * 2] * (n * (n-1) // 2)
         return ans % (10**9 + 7)
-    
+
     @solution
     def three_sum(self, A, target):
         # 96ms
@@ -59,8 +58,9 @@ def main():
     q.add_args([1, 1, 2, 2, 3, 3, 4, 4, 5, 5], 8)
     q.add_args([1, 1, 2, 2, 2, 2], 5)
     q.add_args([0, 0, 0], 0)
-    q.add_args([2, 3, 3, 1, 0, 0, 1], 5) # 6
-    q.add_args([52, 53, 86, 11, 35, 1, 41, 34, 52, 64, 90, 54, 84, 99, 67, 8, 80, 100, 51, 66, 37, 31, 13, 13, 22, 31, 81, 96, 81, 96], 79)
+    q.add_args([2, 3, 3, 1, 0, 0, 1], 5)
+    q.add_args([52, 53, 86, 11, 35, 1, 41, 34, 52, 64, 90, 54, 84, 99,
+                67, 8, 80, 100, 51, 66, 37, 31, 13, 13, 22, 31, 81, 96, 81, 96], 79)
     q.run()
 
 
