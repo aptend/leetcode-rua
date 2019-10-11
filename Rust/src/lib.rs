@@ -4,6 +4,7 @@
 mod bisect;
 
 mod n0003_longest_substring_without_repeating_characters;
+mod n0015_3sum;
 mod n0090_subsets_ii;
 mod n0204_count_primes;
 mod n0213_house_robber_ii;
