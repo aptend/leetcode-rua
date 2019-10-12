@@ -7,7 +7,7 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     for (k, &x) in nums.iter().enumerate() {
         if x > 0 {
             break;
-        } else if k > 0 && x == nums[k-1] {
+        } else if k > 0 && x == nums[k - 1] {
             continue;
         }
         let (mut i, mut j) = (k + 1, N - 1);
@@ -47,7 +47,7 @@ pub fn three_sum1(nums: Vec<i32>) -> Vec<Vec<i32>> {
         for j in i..keys.len() {
             let (a, b) = (keys[i], keys[j]);
             let c = -(a + b);
-            if ! counter.contains_key(&c) {
+            if !counter.contains_key(&c) {
                 continue;
             }
             if a == b && b == c && counter[&a] >= 3 {
@@ -61,7 +61,6 @@ pub fn three_sum1(nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     ans
 }
-
 
 #[test]
 fn test_15() {

@@ -14,3 +14,10 @@ serde_json = "^1.0"
 
 [lib]
 doctest = false
+
+
+[[bin]]
+name = "Rust"
+path = "src/main.rs"
+test = false
+doctest = false
