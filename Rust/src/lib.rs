@@ -4,7 +4,10 @@
 mod bisect;
 
 mod n0003_longest_substring_without_repeating_characters;
+mod n0011_container_with_most_water;
 mod n0015_3sum;
+mod n0033_search_in_rotated_sorted_array;
+mod n0062_unique_paths;
 mod n0090_subsets_ii;
 mod n0204_count_primes;
 mod n0213_house_robber_ii;
