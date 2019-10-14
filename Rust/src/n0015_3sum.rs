@@ -33,6 +33,7 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     ans
 }
 
+#[allow(clippy::if_same_then_else)]
 pub fn three_sum1(nums: Vec<i32>) -> Vec<Vec<i32>> {
     // 152ms
     let mut counter = std::collections::HashMap::new();
