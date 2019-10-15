@@ -7,6 +7,8 @@ mod n0003_longest_substring_without_repeating_characters;
 mod n0011_container_with_most_water;
 mod n0015_3sum;
 mod n0033_search_in_rotated_sorted_array;
+mod n0043_multiply_strings;
+mod n0059_spiral_matrix_ii;
 mod n0062_unique_paths;
 mod n0089_gray_code;
 mod n0090_subsets_ii;
