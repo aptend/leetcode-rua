@@ -16,6 +16,7 @@ mod n0121_best_time_to_buy_and_sell_stock;
 mod n0122_best_time_to_buy_and_sell_stock_ii;
 mod n0204_count_primes;
 mod n0213_house_robber_ii;
+mod n0231_power_of_two;
 mod n0290_word_pattern;
 mod n0313_super_ugly_number;
 mod n0442_find_all_duplicates_in_an_array;
