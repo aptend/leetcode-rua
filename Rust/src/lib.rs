@@ -4,8 +4,12 @@
 mod bisect;
 
 mod n0003_longest_substring_without_repeating_characters;
+mod n0007_reverse_integer;
+mod n0009_palindrome_number;
 mod n0011_container_with_most_water;
+mod n0014_longest_common_prefix;
 mod n0015_3sum;
+mod n0020_valid_parentheses;
 mod n0033_search_in_rotated_sorted_array;
 mod n0043_multiply_strings;
 mod n0046_permutations;
@@ -58,4 +62,3 @@ mod n1217_play_with_chips;
 mod n1218_longest_arithmetic_subsequence_of_given_difference;
 mod n1219_path_with_maximum_gold;
 mod n1220_count_vowels_permutation;
-mod n0009_palindrome_number;
