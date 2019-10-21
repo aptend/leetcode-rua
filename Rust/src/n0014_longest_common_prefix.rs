@@ -1,5 +1,5 @@
 pub fn longest_common_prefix(strs: Vec<String>) -> String {
-    if strs.len() == 0 {
+    if strs.is_empty() {
         return "".to_owned();
     } else if strs.len() == 1 {
         return strs[0].clone();

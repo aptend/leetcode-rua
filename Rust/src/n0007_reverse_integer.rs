@@ -9,7 +9,7 @@ pub fn reverse(x: i32) -> i32 {
         if r > limit && x > 10 {
             return 0;
         }
-        x = x / 10
+        x /= 10
     }
     if is_neg {
         -r
