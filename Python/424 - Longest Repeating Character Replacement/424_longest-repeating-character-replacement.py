@@ -21,6 +21,23 @@ class Q424(Solution):
         ans = max(ans, j - i)
         return ans
 
+    @solution
+    def character_replacement(self, s, k):
+        # 120ms
+        counter = defaultdict(int)
+        max_freq = 0
+        i, j = 0, 0
+        ans = 0
+        while j < len(s):
+            counter[s[j]] += 1
+            max_freq = max(max_freq, counter[s[j]])
+            if j - i + 1 - max_freq > k:
+                counter[s[i]] -= 1
+                i += 1
+            ans = max(ans, j - i + 1)
+            j += 1
+        return ans
+
 
 def main():
     q = Q424()
