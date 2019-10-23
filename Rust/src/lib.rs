@@ -4,6 +4,7 @@
 mod bisect;
 
 mod n0003_longest_substring_without_repeating_characters;
+mod n0005_longest_palindromic_substring;
 mod n0007_reverse_integer;
 mod n0009_palindrome_number;
 mod n0011_container_with_most_water;
@@ -46,6 +47,7 @@ mod n0820_short_encoding_of_words;
 mod n0825_friends_of_appropriate_ages;
 mod n0869_reordered_power_of_2;
 mod n0870_advantage_shuffle;
+mod n0904_fruit_into_baskets;
 mod n0905_sort_array_by_parity;
 mod n0918_maximum_sum_circular_subarray;
 mod n0923_3sum_with_multiplicity;
@@ -53,6 +55,7 @@ mod n0945_minimum_increment_to_make_array_unique;
 mod n0950_reveal_cards_in_increasing_order;
 mod n0967_numbers_with_same_consecutive_differences;
 mod n0991_broken_calculator;
+mod n0992_subarrays_with_k_different_integers;
 mod n1155_number_of_dice_rolls_with_target_sum;
 mod n1177_can_make_palindrome_from_substring;
 mod n1189_maximum_number_of_ballons;
