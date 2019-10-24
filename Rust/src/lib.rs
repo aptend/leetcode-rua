@@ -58,6 +58,7 @@ mod n0950_reveal_cards_in_increasing_order;
 mod n0967_numbers_with_same_consecutive_differences;
 mod n0991_broken_calculator;
 mod n0992_subarrays_with_k_different_integers;
+mod n1081_smallest_subsequence_of_distinct_characters;
 mod n1155_number_of_dice_rolls_with_target_sum;
 mod n1177_can_make_palindrome_from_substring;
 mod n1189_maximum_number_of_ballons;
