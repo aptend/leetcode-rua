@@ -55,6 +55,7 @@ mod n0918_maximum_sum_circular_subarray;
 mod n0923_3sum_with_multiplicity;
 mod n0945_minimum_increment_to_make_array_unique;
 mod n0950_reveal_cards_in_increasing_order;
+mod n0962_maximum_width_ramp;
 mod n0967_numbers_with_same_consecutive_differences;
 mod n0991_broken_calculator;
 mod n0992_subarrays_with_k_different_integers;
