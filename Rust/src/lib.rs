@@ -25,6 +25,7 @@ mod n0090_subsets_ii;
 mod n0121_best_time_to_buy_and_sell_stock;
 mod n0122_best_time_to_buy_and_sell_stock_ii;
 mod n0155_min_stack;
+mod n0198_house_robber;
 mod n0204_count_primes;
 mod n0213_house_robber_ii;
 mod n0215_kth_largest_element_in_an_array;
