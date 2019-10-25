@@ -43,6 +43,7 @@ mod n0560_subarray_sum_equals_k;
 mod n0611_valid_triangle_number;
 mod n0646_maximum_length_of_pair_chain;
 mod n0696_count_binary_substrings;
+mod n0739_daily_temperatures;
 mod n0795_number_of_subarrays_with_bounded_maximum;
 mod n0818_race_car;
 mod n0820_short_encoding_of_words;
