@@ -39,6 +39,6 @@ pub fn max_product_concise(nums: Vec<i32>) -> i32 {
 fn test_152() {
     assert_eq!(2, max_product(vec![2]));
     assert_eq!(-2, max_product(vec![-2]));
-    assert_eq!(8, max_product(vec![-2, 2, 2]));
+    assert_eq!(4, max_product(vec![-2, 2, 2]));
     assert_eq!(6, max_product(vec![2, 3, -2, 4]));
 }
