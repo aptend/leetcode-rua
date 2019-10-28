@@ -1,5 +1,7 @@
 from leeyzer import solution, Solution
 
+from collections import Counter
+
 class Q940(Solution):
     @solution
     def distinctSubseqII(self, S):
@@ -28,14 +30,15 @@ class Q940(Solution):
         return sum(dp) % (10**9 + 7)
 
     @solution
-    def distinct_subseq(self, S):
-        # 112ms 19.91%
-        # dp[0] means how many subseqs ending with 'a'
-        # dp[25] means how many subseqs ending with 'z'
-        dp = 0
+    def distinct_subseq_ii(self, S):
+        # 64ms
+        ans = 0
+        dp = Counter()
         for ch in S:
-            dp[ord(ch) - ord('a')] = sum(dp) + 1
-        return sum(dp) % (10**9 + 7)
+            old_ans = ans
+            ans += ans + 1 - dp[ch]
+            dp[ch] = old_ans + 1
+        return ans % (10**9 + 7)
 
 
 
