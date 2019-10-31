@@ -6,6 +6,7 @@ mod bisect;
 mod n0003_longest_substring_without_repeating_characters;
 mod n0005_longest_palindromic_substring;
 mod n0007_reverse_integer;
+mod n0008_string_to_integer_atoi;
 mod n0009_palindrome_number;
 mod n0011_container_with_most_water;
 mod n0014_longest_common_prefix;
