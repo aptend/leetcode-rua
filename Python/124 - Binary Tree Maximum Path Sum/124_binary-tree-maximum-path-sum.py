@@ -22,9 +22,10 @@ class Q124(Solution):
 def main():
     q = Q124()
     q.set_context(TreeContext)
-    q.add_args([1, 2, 3])
-    q.add_args([-10, 9, 20, None, None, 15, 7])
-    q.add_args([2, -1])
+    q.add_args([1, 2, 3]) # 6
+    q.add_args([-10, 9, 20, None, None, 15, 7]) # 42
+    q.add_args([-3]) # -3
+    q.add_args([2, -1]) # 2
     q.run()
 
 
