@@ -25,6 +25,7 @@ mod n0089_gray_code;
 mod n0090_subsets_ii;
 mod n0121_best_time_to_buy_and_sell_stock;
 mod n0122_best_time_to_buy_and_sell_stock_ii;
+mod n0150_evaluate_reverse_polish_notation;
 mod n0152_maximum_product_subarray;
 mod n0155_min_stack;
 mod n0198_house_robber;
