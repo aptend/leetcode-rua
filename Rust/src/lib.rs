@@ -17,6 +17,7 @@ mod n0033_search_in_rotated_sorted_array;
 mod n0043_multiply_strings;
 mod n0046_permutations;
 mod n0054_spiral_matrix;
+mod n0055_jump_game;
 mod n0059_spiral_matrix_ii;
 mod n0062_unique_paths;
 mod n0076_minimum_window_substring;
