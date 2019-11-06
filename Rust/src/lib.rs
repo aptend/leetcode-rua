@@ -20,6 +20,7 @@ mod n0054_spiral_matrix;
 mod n0055_jump_game;
 mod n0059_spiral_matrix_ii;
 mod n0062_unique_paths;
+mod n0074_search_a_2d_matrix;
 mod n0076_minimum_window_substring;
 mod n0088_merge_sorted_array;
 mod n0089_gray_code;
