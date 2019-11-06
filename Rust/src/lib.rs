@@ -25,6 +25,7 @@ mod n0076_minimum_window_substring;
 mod n0088_merge_sorted_array;
 mod n0089_gray_code;
 mod n0090_subsets_ii;
+mod n0091_decode_ways;
 mod n0121_best_time_to_buy_and_sell_stock;
 mod n0122_best_time_to_buy_and_sell_stock_ii;
 mod n0150_evaluate_reverse_polish_notation;
