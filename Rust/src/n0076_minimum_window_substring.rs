@@ -26,7 +26,7 @@ pub fn min_window(s: String, t: String) -> String {
             i += 1;
         }
     }
-    ans.and_then(|r| Some(schars[r.0..=r.1].iter().collect()))
+    ans.map(|r| schars[r.0..=r.1].iter().collect())
         .unwrap_or_else(|| "".to_owned())
 }
 
