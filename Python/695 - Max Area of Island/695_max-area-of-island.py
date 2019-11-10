@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 
 
 class Q695(Solution):

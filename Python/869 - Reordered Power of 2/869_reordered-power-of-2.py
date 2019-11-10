@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 
 from collections import Counter, defaultdict
 class Q869(Solution):

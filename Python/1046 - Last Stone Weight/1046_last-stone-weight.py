@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 
 from heapq import heapify, heappop, heappush
 class Q1046(Solution):

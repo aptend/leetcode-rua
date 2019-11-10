@@ -1,5 +1,5 @@
-from leeyzer import Solution, solution
-from leeyzer.assists import TreeContext
+from leezy import Solution, solution
+from leezy.assists import TreeContext
 
 class Q543(Solution):
     @solution

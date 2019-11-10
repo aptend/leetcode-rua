@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 from bisect import bisect_right
 
 class Q825(Solution):

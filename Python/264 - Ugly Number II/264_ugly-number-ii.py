@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 from heapq import heappush, heappop
 
 class Q264(Solution):

@@ -1,4 +1,4 @@
-from leeyzer import solution, Solution
+from leezy import solution, Solution
 from pprint import pprint
 class Q1035(Solution):
     @solution

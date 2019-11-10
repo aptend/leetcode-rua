@@ -1,5 +1,5 @@
-from leeyzer import solution, Solution
-from leeyzer.assists import LinkedListContext, LinkedListNode
+from leezy import solution, Solution
+from leezy.assists import LinkedListContext, LinkedListNode
 
 class Q206(Solution):
     @solution

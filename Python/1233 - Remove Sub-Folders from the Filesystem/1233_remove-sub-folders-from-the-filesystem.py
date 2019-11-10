@@ -1,4 +1,4 @@
-from leeyzer import solution, Solution
+from leezy import solution, Solution
 
 class Q1233(Solution):
     # a reversed process of 820. short encoding of words

@@ -1,7 +1,7 @@
 from collections import defaultdict
 
-from leeyzer import Solution, solution
-from leeyzer.assists import TreeContext
+from leezy import Solution, solution
+from leezy.assists import TreeContext
 
 
 class Q508(Solution):

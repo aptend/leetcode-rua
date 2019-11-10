@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 from collections import defaultdict
 from bisect import bisect_left
 

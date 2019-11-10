@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 from math import sqrt
 
 class Q633(Solution):

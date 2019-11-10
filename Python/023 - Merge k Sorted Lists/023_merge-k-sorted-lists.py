@@ -1,6 +1,6 @@
-from leeyzer import solution, Solution
+from leezy import solution, Solution
 
-from leeyzer.assists import LinkedListNode
+from leezy.assists import LinkedListNode
 from heapq import heappop, heappush
 
 class Q023(Solution):

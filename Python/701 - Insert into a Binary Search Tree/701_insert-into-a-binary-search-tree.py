@@ -1,5 +1,5 @@
-from leeyzer import Solution, solution
-from leeyzer.assists import TreeContext, TreeNode
+from leezy import Solution, solution
+from leezy.assists import TreeContext, TreeNode
 
 
 class Q701(Solution):

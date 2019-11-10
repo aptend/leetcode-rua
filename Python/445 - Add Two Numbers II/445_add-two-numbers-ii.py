@@ -1,5 +1,5 @@
-from leeyzer import Solution, solution
-from leeyzer.assists import ListNode
+from leezy import Solution, solution
+from leezy.assists import ListNode
 
 
 class Q445(Solution):

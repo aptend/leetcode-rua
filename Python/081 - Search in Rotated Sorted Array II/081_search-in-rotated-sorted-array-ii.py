@@ -4,7 +4,7 @@
 但是考虑[4,5,0,4,4,4,4]，相等无法说明左边有序
 """
 
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 
 
 class Q081(Solution):

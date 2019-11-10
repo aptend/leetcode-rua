@@ -1,4 +1,4 @@
-from leeyzer import Solution, solution, timeit
+from leezy import Solution, solution, timeit
 
 
 class Q698(Solution):

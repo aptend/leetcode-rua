@@ -1,5 +1,5 @@
 
-from leeyzer import solution, Solution
+from leezy import solution, Solution
 
 """
    This is the custom function interface.

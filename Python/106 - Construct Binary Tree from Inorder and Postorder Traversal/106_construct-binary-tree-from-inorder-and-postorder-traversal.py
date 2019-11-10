@@ -1,5 +1,5 @@
-from leeyzer import Solution, solution
-from leeyzer.assists import TreeNode
+from leezy import Solution, solution
+from leezy.assists import TreeNode
 
 
 class Q106(Solution):

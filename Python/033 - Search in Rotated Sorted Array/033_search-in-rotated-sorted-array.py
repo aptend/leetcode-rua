@@ -4,7 +4,7 @@
 if nums[mid] >= nums[lo]: # 等于如果发生，mid=lo => hi=(lo+1) or lo
                           
 """
-from leeyzer import Solution, solution
+from leezy import Solution, solution
 
 
 class Q033(Solution):
