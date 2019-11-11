@@ -34,6 +34,7 @@ mod n0131_palindrome_partitioning;
 mod n0150_evaluate_reverse_polish_notation;
 mod n0152_maximum_product_subarray;
 mod n0155_min_stack;
+mod n0171_excel_sheet_column_number;
 mod n0198_house_robber;
 mod n0204_count_primes;
 mod n0213_house_robber_ii;
