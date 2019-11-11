@@ -44,6 +44,7 @@ mod n0238_product_of_array_except_self;
 mod n0290_word_pattern;
 mod n0313_super_ugly_number;
 mod n0344_reverse_string;
+mod n0371_sum_of_two_integers;
 mod n0442_find_all_duplicates_in_an_array;
 mod n0491_increasing_subsequences;
 mod n0494_target_sum;
