@@ -47,6 +47,8 @@ mod n0313_super_ugly_number;
 mod n0344_reverse_string;
 mod n0371_sum_of_two_integers;
 mod n0384_shuffle_an_array;
+mod n0406_queue_reconstruction_by_height;
+mod n0438_find_all_anagrams_in_a_string;
 mod n0442_find_all_duplicates_in_an_array;
 mod n0491_increasing_subsequences;
 mod n0494_target_sum;
