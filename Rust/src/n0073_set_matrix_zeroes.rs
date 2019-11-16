@@ -1,3 +1,4 @@
+#[allow(clippy::needless_range_loop)]
 pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
     let m = matrix.len();
     if m == 0 {
