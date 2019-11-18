@@ -1,24 +1,24 @@
 from leezy import Solution, solution
 import math
 
+
 class Q996(Solution):
     @solution
     def numSquarefulPerms(self, A):
-        """20ms beats 75.70%
-        """
-        ans = [0]
+        # 20ms 75.70%
+        self.ans = 0
         used = [False] * len(A)
         A = sorted(A)
-        self.dfs(A, 0, used, None, ans)
-        return ans[0]
+        self.dfs(A, 0, used, None)
+        return self.ans
 
     def is_squareful(self, x, y):
         s = int(math.sqrt(x+y))
         return s*s == x+y
 
-    def dfs(self, A, depth, used, prev, ans):
+    def dfs(self, A, depth, used, prev):
         if depth == len(A):
-            ans[0] += 1
+            self.ans += 1
             return
         prev_tried = -1
         for i in range(len(A)):
@@ -28,18 +28,16 @@ class Q996(Solution):
                 continue
             used[i] = True
             prev_tried = A[i]
-            self.dfs(A, depth+1, used, A[i], ans)
+            self.dfs(A, depth+1, used, A[i])
             used[i] = False
 
 
 def main():
     q = Q996()
-    q.add_args([3])  # 1
-    q.add_args([0, 3])  # 0
-    q.add_args([1, 17, 8])
-    q.add_args([2, 2, 7])
+    q.add_case(q.case([1, 17, 8]).assert_equal(2))
+    q.add_case(q.case([2, 2, 2]).assert_equal(1))
     q.run()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
