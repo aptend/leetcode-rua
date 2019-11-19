@@ -1,6 +1,7 @@
 from leezy import Solution, solution
 from bisect import bisect_left
 
+
 class Q300(Solution):
     @solution
     def lengthOfLIS(self, nums):
@@ -18,18 +19,27 @@ class Q300(Solution):
 
     @solution
     def length_of_LIS_better(self, nums):
-        pass
-        # to be continued
-
-
+        # 36ms 99.25%
+        # i was inspired by the queue-based solution of
+        # 995 - Minimum Number of K Consecutive Bit Flips
+        increasing_list = []
+        for x in nums:
+            idx = bisect_left(increasing_list, x)
+            if idx == len(increasing_list):
+                increasing_list.append(x)
+            else:
+                # it is a bit greedy. if we want the list to be longer,
+                # try our best to hold `sum(list)` smallest
+                increasing_list[idx] = x
+        return len(increasing_list)
 
 
 def main():
     q = Q300()
-    # q.add_args([])
-    # q.add_args([2, 2, 2])
-    # q.add_args([10, 9, 2, 5, 3, 7, 101, 18])
-    q.add_args([1, 3, 6, 7, 9, 4, 10, 5, 6])
+    q.add_case(q.case([]).assert_equal(0))
+    q.add_case(q.case([2, 2, 2]).assert_equal(1))
+    q.add_case(q.case([10, 9, 2, 5, 3, 7, 101, 18]).assert_equal(4))
+    q.add_case(q.case([1, 3, 6, 7, 9, 4, 10, 5, 6]).assert_equal(6))
     q.run()
 
 
