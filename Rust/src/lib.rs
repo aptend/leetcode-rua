@@ -46,6 +46,7 @@ mod n0238_product_of_array_except_self;
 mod n0268_missing_number;
 mod n0290_word_pattern;
 mod n0313_super_ugly_number;
+mod n0334_increasing_triplet_subsequence;
 mod n0344_reverse_string;
 mod n0371_sum_of_two_integers;
 mod n0384_shuffle_an_array;
