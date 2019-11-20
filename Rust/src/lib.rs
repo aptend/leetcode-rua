@@ -62,6 +62,7 @@ mod n0518_coin_change_2;
 mod n0557_reverse_words_in_a_string_iii;
 mod n0560_subarray_sum_equals_k;
 mod n0581_shortest_unsorted_continuous_subarray;
+mod n0583_delete_operation_for_two_strings;
 mod n0611_valid_triangle_number;
 mod n0646_maximum_length_of_pair_chain;
 mod n0647_palindromic_substrings;
