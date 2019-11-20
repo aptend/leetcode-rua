@@ -51,6 +51,7 @@ mod n0371_sum_of_two_integers;
 mod n0384_shuffle_an_array;
 mod n0387_first_unique_character_in_a_string;
 mod n0395_longest_substring_with_at_least_k_repeating_characters;
+mod n0400_nth_digit;
 mod n0406_queue_reconstruction_by_height;
 mod n0412_fizz_buzz;
 mod n0438_find_all_anagrams_in_a_string;
