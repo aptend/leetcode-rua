@@ -2,3 +2,6 @@
 **/*.rs.bk
 *.py[cox]
 __pycache__
+
+# private exclusion
+leezy.exe

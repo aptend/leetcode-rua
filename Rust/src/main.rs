@@ -22,7 +22,7 @@ query questionData($titleSlug: String!) {
 }"#;
 const QUESTION_QUERY_OPERATION: &str = "questionData";
 
-const ENTRY_JSON: &str = r#"leeyzer_problems.json"#;
+const ENTRY_JSON: &str = r#"leezy_problems.json"#;
 
 const TEST_TMPL: &str = r#"
 
@@ -34,10 +34,8 @@ fn test_{id}() {
 
 #[derive(Debug, Deserialize)]
 struct ProblemEntry {
-    #[serde(rename = "question__title_slug")]
-    question_title_slug: String,
-    #[serde(rename = "question__title")]
-    question_title: String,
+    title_slug: String,
+    title: String,
     difficulty: String,
 }
 
@@ -79,12 +77,12 @@ fn main() {
     let entry_repo: HashMap<i32, ProblemEntry> = serde_json::from_str(&repo_json).unwrap();
 
     let entry = &entry_repo[&id];
-    let file_name = format!("n{:04}_{}", id, entry.question_title_slug.replace("-", "_"));
+    let file_name = format!("n{:04}_{}", id, entry.title_slug.replace("-", "_"));
     let file_path = Path::new("./src").join(format!("{}.rs", file_name));
 
     let query = json!({
         "operationName": QUESTION_QUERY_OPERATION.to_owned(),
-        "variables": json!({"titleSlug": entry.question_title_slug}),
+        "variables": json!({"titleSlug": entry.title_slug}),
         "query": QUESTION_QUERY_STRING.to_owned(),
     });
     let client = reqwest::Client::new();
