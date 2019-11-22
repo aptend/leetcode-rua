@@ -87,6 +87,7 @@ mod n0967_numbers_with_same_consecutive_differences;
 mod n0991_broken_calculator;
 mod n0992_subarrays_with_k_different_integers;
 mod n0997_find_the_town_judge;
+mod n1001_grid_illumination;
 mod n1081_smallest_subsequence_of_distinct_characters;
 mod n1155_number_of_dice_rolls_with_target_sum;
 mod n1177_can_make_palindrome_from_substring;
