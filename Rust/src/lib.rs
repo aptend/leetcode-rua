@@ -44,6 +44,7 @@ mod n0217_contains_duplicate;
 mod n0231_power_of_two;
 mod n0238_product_of_array_except_self;
 mod n0268_missing_number;
+mod n0279_perfect_squares;
 mod n0290_word_pattern;
 mod n0313_super_ugly_number;
 mod n0334_increasing_triplet_subsequence;
