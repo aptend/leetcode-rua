@@ -6,7 +6,7 @@ class Q084(Solution):
     """
     @solution
     def largestRectangleArea(self, heights):
-        # TLE 
+        # TLE
         # tests passed: 94/96
         # the basic idea is to try every max rectangle having height[i]
         # what we need to kown is,
@@ -20,7 +20,7 @@ class Q084(Solution):
                     l_cnt += 1
                 else:
                     break
-            
+
             for j in range(i+1, len(heights)):
                 if heights[j] >= h:
                     r_cnt += 1
@@ -79,18 +79,18 @@ class Q084(Solution):
             ans = max(ans, h * (1 + left[i] + right[i]))
         return ans
 
-
     @solution
     def largest_area(self, heights):
         # 88ms 77.03%
-        heights = heights + [0] # append a 0 height, make sure to pop every bar
-        stack = [-1] # 
+        # append a 0 height, make sure to pop every bar
+        heights = heights + [0]
+        stack = [-1]
         max_area = 0
         for i, h in enumerate(heights):
             while heights[stack[-1]] > h:
                 # actually, when we encounter a smaller (not including equal) bar,
                 # this is a right boundry
-                # every higher bar 'h_x' in the stack could be popped and 
+                # every higher bar 'h_x' in the stack could be popped and
                 # calculated the max rect with height 'h_x'
                 j = stack.pop()
                 width = i - stack[-1] - 1
@@ -100,14 +100,13 @@ class Q084(Solution):
         return max_area
 
 
-
 def main():
     q = Q084()
     q.add_args([1])
-    q.add_args([2, 1, 2]) # 3
-    q.add_args([3, 6, 5, 7, 4, 8, 1, 0]) # 20
-    q.add_args([2, 1, 5, 6, 2, 3]) # 10
-    q.add_args([2, 7, 1, 8, 8, 3, 11, 12, 13, 3]) # 33
+    q.add_args([2, 1, 2])  # 3
+    q.add_args([3, 6, 5, 7, 4, 8, 1, 0])  # 20
+    q.add_args([2, 1, 5, 6, 2, 3])  # 10
+    q.add_args([2, 7, 1, 8, 8, 3, 11, 12, 13, 3])  # 33
     q.run()
 
 

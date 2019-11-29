@@ -25,6 +25,7 @@ mod n0069_sqrtx;
 mod n0073_set_matrix_zeroes;
 mod n0074_search_a_2d_matrix;
 mod n0076_minimum_window_substring;
+mod n0084_largest_rectangle_in_histogram;
 mod n0088_merge_sorted_array;
 mod n0089_gray_code;
 mod n0090_subsets_ii;
