@@ -4,6 +4,7 @@ from leezy import solution, Solution
 class Q166(Solution):
     @solution
     def fractionToDecimal(self, numerator, denominator):
+        #28ms 92.21%
         n, d = numerator, denominator
         if d == 0:
             return "NaN"
