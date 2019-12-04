@@ -23,12 +23,13 @@ the number of parens needed to complete those mismatched end parens is the answe
 class Q921(Solution):
     @solution
     def minAddToMakeValid(self, S):
+        # 12ms 97.02%
         # 301 - Remove Invalid Parentheses
         left = right = 0
         for c in S:
             if c == '(':
                 left += 1
-            elif c == ')':
+            else:
                 if left > 0:
                     left -= 1
                 else:
