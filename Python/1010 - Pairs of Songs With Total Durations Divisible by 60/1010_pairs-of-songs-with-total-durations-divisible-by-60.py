@@ -2,6 +2,7 @@ from leezy import Solution, solution
 
 from collections import defaultdict
 
+
 class Q1010(Solution):
     @solution
     def numPairsDivisibleBy60(self, time):
@@ -9,9 +10,9 @@ class Q1010(Solution):
         table = defaultdict(int)
         ans = 0
         for d in time:
-                r = d % 60
-                ans += table[(60 - r) % 60]
-                table[r] += 1
+            r = d % 60
+            ans += table[(60 - r) % 60]
+            table[r] += 1
         return ans
 
 
