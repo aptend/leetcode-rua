@@ -31,5 +31,8 @@ fn test_84() {
     assert_eq!(3, largest_rectangle_area(vec![2, 1, 2]));
     assert_eq!(10, largest_rectangle_area(vec![2, 1, 5, 6, 2, 3]));
     assert_eq!(20, largest_rectangle_area(vec![3, 6, 5, 7, 4, 8, 1, 0]));
-    assert_eq!(33, largest_rectangle_area(vec![2, 7, 1, 8, 8, 3, 11, 12, 13, 3]));
+    assert_eq!(
+        33,
+        largest_rectangle_area(vec![2, 7, 1, 8, 8, 3, 11, 12, 13, 3])
+    );
 }

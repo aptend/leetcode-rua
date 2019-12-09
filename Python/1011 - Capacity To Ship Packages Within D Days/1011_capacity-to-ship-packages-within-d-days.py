@@ -25,9 +25,9 @@ class Q1011(Solution):
 
 def main():
     q = Q1011()
-    q.add_args([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5) # 15
-    q.add_args([3, 2, 2, 4, 1, 4], 3) # 6
-    q.add_args([1, 2, 3, 1, 1], 4) # 3
+    q.add_case(q.case([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5).assert_equal(15))
+    q.add_case(q.case([3, 2, 2, 4, 1, 4], 3).assert_equal(6))
+    q.add_case(q.case([1, 2, 3, 1, 1], 4).assert_equal(3))
     q.run()
 
 
