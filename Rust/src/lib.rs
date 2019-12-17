@@ -93,6 +93,7 @@ mod n1001_grid_illumination;
 mod n1005_maximize_sum_of_array_after_k_negations;
 mod n1011_capacity_to_ship_packages_within_d_days;
 mod n1019_next_greater_node_in_linked_list;
+mod n1027_longest_arithmetic_sequence;
 mod n1081_smallest_subsequence_of_distinct_characters;
 mod n1155_number_of_dice_rolls_with_target_sum;
 mod n1177_can_make_palindrome_from_substring;
