@@ -1,6 +1,7 @@
 from leezy import solution, Solution
 from leezy.assists import LinkedListNode
 
+
 class Q141(Solution):
     @solution
     def has_cycle(self, head):
@@ -29,11 +30,13 @@ class Q141(Solution):
 
 def main():
     q = Q141()
-    new = LinkedListNode.make_linked_list
-    link = LinkedListNode.make_circle_list
-    q.add_args(link(new([3, 2, 0, -4]), 1))
-    q.add_args(link(new([3, 2, 0, -4]), -1))
+    make = LinkedListNode.make_cycle_list
+
+    q.add_case(q.case(make([3, 2, 0, -4], 1)).assert_equal(True))
+    q.add_case(q.case(make([1, 2], 0)).assert_equal(True))
+    q.add_case(q.case(make([1], -1)).assert_equal(False))
     q.run()
+
 
 if __name__ == '__main__':
     main()
