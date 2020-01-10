@@ -1,5 +1,6 @@
 from leezy import solution, Solution
 
+
 class Q621(Solution):
     @solution
     def leastInterval(self, tasks, n):
@@ -27,7 +28,7 @@ class Q621(Solution):
                 ans += n + 1
 
         return ans
-    
+
     @solution
     def interval(self, tasks, n):
         # the basic idea is to fill n+1 slots with totally different tasks
@@ -49,8 +50,11 @@ class Q621(Solution):
 
 def main():
     q = Q621()
-    q.add_args(['A', 'A', 'A', 'B', 'B', 'B'], 2)
+    q.add_case(q.case(['A', 'A', 'A', 'B', 'B', 'B'], 2).assert_equal(8))
+    q.add_case(q.case(['A', 'A', 'A', 'B', 'B', 'B'], 50).assert_equal(104))
+    q.add_case(q.case(['A', 'A', 'A', 'A', 'A', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], 2).assert_equal(16))
     q.run()
+
 
 if __name__ == '__main__':
     main()
