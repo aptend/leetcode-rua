@@ -22,7 +22,7 @@ pub fn is_match(s: String, p: String) -> bool {
     let schs: Vec<char> = s.chars().collect();
     let pchs: Vec<char> = p.chars().collect();
     let mut memo = vec![vec![0; pchs.len() + 1]; schs.len() + 1];
-    return re_match(&schs, &pchs, 0, 0, &mut memo);
+    re_match(&schs, &pchs, 0, 0, &mut memo)
 }
 
 #[test]

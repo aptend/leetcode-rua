@@ -13,6 +13,7 @@ mod n0011_container_with_most_water;
 mod n0014_longest_common_prefix;
 mod n0015_3sum;
 mod n0020_valid_parentheses;
+mod n0022_generate_parentheses;
 mod n0026_remove_duplicates_from_sorted_array;
 mod n0033_search_in_rotated_sorted_array;
 mod n0043_multiply_strings;
