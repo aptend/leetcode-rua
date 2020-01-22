@@ -15,6 +15,7 @@ mod n0015_3sum;
 mod n0020_valid_parentheses;
 mod n0022_generate_parentheses;
 mod n0026_remove_duplicates_from_sorted_array;
+mod n0029_divide_two_integers;
 mod n0033_search_in_rotated_sorted_array;
 mod n0043_multiply_strings;
 mod n0046_permutations;
