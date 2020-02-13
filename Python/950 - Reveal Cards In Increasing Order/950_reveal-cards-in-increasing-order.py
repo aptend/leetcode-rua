@@ -2,6 +2,7 @@ from leezy import Solution, solution
 
 from collections import deque
 
+
 class Q950(Solution):
     @solution
     def deckRevealedIncreasing(self, deck):
@@ -25,7 +26,7 @@ class Q950(Solution):
             return aux
         deck = sorted(deck)
         return reveal(deck)
-    
+
     @solution
     def deck_reveal(self, deck):
         # 64ms
@@ -35,14 +36,17 @@ class Q950(Solution):
         ans = [0] * N
         for card in sorted(deck):
             ans[q.popleft()] = card
+            # rotate left, front element goes to back end
             q.rotate(-1)
         return ans
 
 
 def main():
     q = Q950()
-    q.add_args([17, 13, 11, 2, 3, 5, 7])
-    q.add_args([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    q.add_case(q.case([17, 13, 11, 2, 3, 5, 7])
+                .assert_equal([2, 13, 3, 11, 5, 17, 7]))
+    q.add_case(q.case([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+                .assert_equal([1, 9, 2, 7, 3, 11, 4, 8, 5, 10, 6]))
     q.run()
 
 
