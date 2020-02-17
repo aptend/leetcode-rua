@@ -2,6 +2,17 @@ from leezy import solution, Solution
 from functools import cmp_to_key
 
 
+class Wrap:
+    def __init__(self, x):
+        self.x = str(x)
+
+    def __eq__(self, other):
+        return self.x == self.x
+
+    def __lt__(self, other):
+        return self.x + other.x < other.x + self.x
+
+
 class Q179(Solution):
     @solution
     def largestNumber(self, nums):
@@ -16,6 +27,12 @@ class Q179(Solution):
 
         literal_nums = [str(n) for n in nums]
         r = "".join(sorted(literal_nums, key=cmp_to_key(cmp), reverse=True))
+        return "0" if r[0] == "0" else r
+
+    @solution
+    def largest(self, nums):
+        l_nums = [str(n) for n in nums]
+        r = "".join(sorted(l_nums, key=lambda x: Wrap(x), reverse=True))
         return "0" if r[0] == "0" else r
 
 
