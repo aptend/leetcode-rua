@@ -30,10 +30,11 @@ class Q003(Solution):
 
 def main():
     q = Q003()
-    q.add_args('abcabcbb')
-    q.add_args('bbbbb')
-    q.add_args('pwwkew')
-    q.add_args('aabbaab!b')
+    q.add_case(q.case('abcabcbb').assert_equal(3))
+    q.add_case(q.case('bbbbb').assert_equal(1))
+    q.add_case(q.case('pwwkew').assert_equal(3))
+    q.add_case(q.case('aabbaab!b').assert_equal(3))
+    q.add_case(q.case('abcd').assert_equal(4))
     q.run()
 
 
