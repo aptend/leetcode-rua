@@ -1,6 +1,7 @@
 from leezy import Solution, solution
 from heapq import heappush, heappop
 
+
 class Q264(Solution):
     @solution
     def nthUglyNumber(self, n):
@@ -15,11 +16,14 @@ class Q264(Solution):
             nums.append(next_)
             # if next_ == next2 and next_ == next3
             # increase both i2 and i3
-            if next_ == next2: i2 += 1
-            if next_ == next3: i3 += 1
-            if next_ == next5: i5 += 1
+            if next_ == next2:
+                i2 += 1
+            if next_ == next3:
+                i3 += 1
+            if next_ == next5:
+                i5 += 1
         return nums[n-1]
-    
+
     @solution
     def nth_ugly(self, n):
         # 244ms 26.48%
@@ -33,7 +37,6 @@ class Q264(Solution):
             heappush(q, x*3)
             heappush(q, x*5)
         return q[0]
-
 
 
 def main():
