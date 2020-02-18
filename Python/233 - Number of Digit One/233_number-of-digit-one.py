@@ -7,6 +7,10 @@ class Q233(Solution):
         # 20 ms 97.37%
         width = len(str(n))
         dp = [0] * width
+        # dp[i] means how many digit 1 in interval [1, 10**i - 1]
+        # [1, 9]   - dp[1] - 1
+        # [1, 99]  - dp[2] - 20
+        # [1, 999] - dp[3] - 300
         for i in range(1, width):
             dp[i] = 10 ** (i-1) + dp[i-1] * 10
 
