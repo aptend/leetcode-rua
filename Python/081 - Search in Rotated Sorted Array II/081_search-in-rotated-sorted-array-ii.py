@@ -1,7 +1,16 @@
 """
-点在于，原来可以通过判断mid和lo的大小来判断有序数组，等于时的情况不能说明问题了
-原来nums[mid]和nums[lo]相等，可以明确地说，mid = lo, 左边有序依旧得到保证
-但是考虑[4,5,0,4,4,4,4]，相等无法说明左边有序
+in problem 33, A[mid] >= A[lo], we can say the left array is sorted.
+
+however, in this case, we can't do that again.
+
+consider this array [4,5,0,4,4,4,4], we have 4(mid) >= 4(lo), but the left
+array is unsorted.
+
+how can we reduce this case to what we have been familiar with?
+
+we can eliminate all leading elements who equal A[mid], then we are able to
+
+determine which part is sorted, like what we did in problem 33.
 """
 
 from leezy import Solution, solution
@@ -15,17 +24,15 @@ class Q081(Solution):
             mid = (lo + hi) // 2
             if nums[mid] == target:
                 return True
-            # mid不是解，所以把开头的mid全部删除
             while lo < mid and nums[lo] == nums[mid]:
                 lo += 1
-            # 如果因为不等跳出循环，下面一个会取大于
-            # 如果因为lo = mid跳出循环，下面一定会取等于
-            if nums[mid] >= nums[lo]:  # 左侧一定就是有序数组
+            # now the left array is sorted, maybe nums[mid] **is** nums[lo]
+            if nums[mid] >= nums[lo]:
                 if nums[lo] <= target < nums[mid]:
                     hi = mid - 1
                 else:
                     lo = mid + 1
-            else:                      # 右侧一定是有序数组
+            else:
                 if nums[mid] < target <= nums[hi]:
                     lo = mid + 1
                 else:
@@ -34,6 +41,7 @@ class Q081(Solution):
 
     @solution
     def search2(self, nums, target):
+        # the mirror version
         lo, hi = 0, len(nums)-1
         while lo <= hi:
             mid = lo + (hi - lo) // 2
@@ -46,7 +54,7 @@ class Q081(Solution):
                     lo = mid + 1
                 else:
                     hi = mid - 1
-            else:         # nums[mid] < nums[lo]
+            else:
                 if nums[mid] > target >= nums[lo]:
                     hi = mid - 1
                 else:
@@ -56,9 +64,9 @@ class Q081(Solution):
 
 def main():
     q = Q081()
-    q.add_args([2, 5, 6, 0, 0, 1, 2], 0)
-    q.add_args([2, 5, 6, 0, 0, 1, 2], 3)
-    q.add_args([2, 5, 6, 0, 0, 1, 2], -1)
+    q.add_case(q.case([2, 5, 6, 0, 0, 1, 2], 0).assert_equal(True))
+    q.add_case(q.case([2, 5, 6, 0, 0, 1, 2], 3).assert_equal(False))
+    q.add_case(q.case([2, 5, 6, 0, 0, 1, 2], -1).assert_equal(False))
     q.run()
 
 
