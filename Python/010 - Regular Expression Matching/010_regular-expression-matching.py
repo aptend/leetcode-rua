@@ -14,18 +14,19 @@ class Q010(Solution):
                 return i == m
             if memo[i][j] is not None:
                 return memo[i][j]
-            s_avail = i < m
-            # when s is depleted while p is not, head_match is False
-            head_match = s_avail and (s[i] == p[j] or p[j] == '.')
+            # when s is depleted while p is not, first_match is False
+            first_match = i < len(s) and (p[j] == '.' or s[i] == p[j])
             if j < n - 1 and p[j+1] == '*':
-                # "*" pattern, which can handle empty s
+                # anyway, we can try to skip the "*" pattern by j+2
                 ans = match(i, j+2)
-                if head_match:
-                    # when head matchs, use '*' once or more
+                # if first letter is matched, skip the letter from s, and
+                # we have opportunity to keep the '*' pattern for next round,
+                # or use it once here and drop it
+                if first_match:
                     ans = ans or match(i+1, j) or match(i+1, j+2)
             else:
-                # '.' pattern alone or no pattern, skip if we can
-                ans = head_match and match(i+1, j+1)
+                # match letter, skip it
+                ans = first_match and match(i+1, j+1)
 
             memo[i][j] = ans
             return ans
@@ -34,12 +35,12 @@ class Q010(Solution):
 
 def main():
     q = Q010()
-    q.add_args('', '.')
-    q.add_args('aa', 'a')
-    q.add_args('aa', 'a*')
-    q.add_args('ab', '.*')
-    q.add_args('aab', 'c*a*b')
-    q.add_args(s="mississippi", p="mis*is*p*.")
+    q.add_case(q.case('', '.').assert_equal(False))
+    q.add_case(q.case('aa', 'a').assert_equal(False))
+    q.add_case(q.case("mississippi", "mis*is*p*.").assert_equal(False))
+    q.add_case(q.case('aa', 'a*').assert_equal(True))
+    q.add_case(q.case('ab', '.*').assert_equal(True))
+    q.add_case(q.case('aab', 'c*a*b').assert_equal(True))
     q.run()
 
 
