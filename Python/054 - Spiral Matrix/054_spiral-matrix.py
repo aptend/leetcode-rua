@@ -1,5 +1,6 @@
 from leezy import solution, Solution
 
+
 class Q054(Solution):
     @solution
     def spiralOrder(self, matrix):
@@ -29,13 +30,45 @@ class Q054(Solution):
                     break
         return ans
 
+    @solution
+    def spiral(self, A):
+        if len(A) == 0:
+            return []
+        m, n = len(A), len(A[0])
+        i, j = 0, 0
+        ans = []
+        while m > 1 and n > 1:
+            for k in range(j, j+n-1):
+                ans.append(A[i][k])
+            for k in range(i, i+m-1):
+                ans.append(A[k][j+n-1])
+            for k in range(j+n-1, j, -1):
+                ans.append(A[i+m-1][k])
+            for k in range(i+m-1, i, -1):
+                ans.append(A[k][j])
+            m -= 2
+            n -= 2
+            i += 1
+            j += 1
+        if m == 1:
+            for k in range(j, j+n):
+                ans.append(A[i][k])
+        elif n == 1:
+            for k in range(i, i+m):
+                ans.append(A[k][j])
+        return ans
+
 
 def main():
     q = Q054()
-    q.add_args([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])
-    q.add_args([[7], [9], [6]])
-    q.add_args([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    q.add_case(q.case([[7], [9], [6]])
+                .assert_equal([7, 9, 6]))
+    q.add_case(q.case([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+                .assert_equal([1, 2, 3, 6, 9, 8, 7, 4, 5]))
+    q.add_case(q.case([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+               .assert_equal([1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]))
     q.run()
+
 
 if __name__ == '__main__':
     main()
