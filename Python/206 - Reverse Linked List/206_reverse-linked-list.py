@@ -1,5 +1,6 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
+
 
 class Q206(Solution):
     @solution
@@ -18,28 +19,23 @@ class Q206(Solution):
         return h
 
     @solution
+    def rev(self, head):
+        if head is None or head.next is None:
+            return head
+        rev_list = self.rev(head.next)
+        head.next.next = head
+        head.next = None
+        return rev_list
+
+    @solution
     def reverse_iter(self, head):
-        dummy = LinkedListNode()
+        dummy = ListNode()
         while head:
             nxt = head.next
             head.next = dummy.next
             dummy.next = head
             head = nxt
         return dummy.next
-
-    @solution
-    def reverse_iter_nodummy(self, head):
-        if not head:
-            return
-        new_head = head
-        head = head.next
-        new_head.next = None
-        while head:
-            nxt_handle = head.next
-            head.next = new_head
-            new_head = head
-            head = nxt_handle
-        return new_head
 
 
 def main():
@@ -49,6 +45,7 @@ def main():
     q.add_case(q.case([1]))
     q.add_case(q.case([]))
     q.run()
+
 
 if __name__ == '__main__':
     main()
