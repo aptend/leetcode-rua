@@ -15,24 +15,23 @@ class Q113(Solution):
     def dfs(self, node, target, current, total):
         if not node.left and not node.right:
             if node.val == target:
-                total.append(current[:]+[node.val])
+                total.append(current+[node.val])
             return
+        current.append(node.val)
         if node.left:
-            current.append(node.val)
             self.dfs(node.left, target-node.val, current, total)
-            current.pop()
         if node.right:
-            current.append(node.val)
             self.dfs(node.right, target-node.val, current, total)
-            current.pop()
+        current.pop()
 
 
 
 def main():
     q = Q113()
     q.set_context(TreeContext)
-    q.add_args([5, 4, 8], 2)
-    q.add_args([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1], 22)
+    q.add_case(q.case([5, 4, 8], 2).assert_equal([]))
+    q.add_case(q.case([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1], 22)
+                .assert_equal([[5, 4, 11, 2], [5, 8, 4, 5]]))
     q.run()
 
 
