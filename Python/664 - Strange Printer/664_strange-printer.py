@@ -7,6 +7,7 @@ class Q664(Solution):
         # 692ms 51.02%
         N = len(s)
         memo = {}
+
         def turns(i, j):
             if i > j:
                 return 0
@@ -34,14 +35,18 @@ class Q664(Solution):
                 return 1
             if (i, j) in memo:
                 return memo[(i, j)]
-            min_ = turns(i+1, j) + 1
+            min_ = turns(i+1, j) + 1  # print the first letter only
             for k in range(i+1, j+1):
                 if s[k] == s[i]:
-                    min_ = min(min_, turns(i+1, k-1) + turns(k, j))
+                    # the s[k] letter will be printed at the same time with
+                    # the first letter
+                    # so the two splitted interval doesn't include s[k] and
+                    # the left interval includes s[i]
+                    min_ = min(min_, turns(i, k-1) + turns(k+1, j))
             memo[(i, j)] = min_
             return min_
         return turns(0, N-1)
-    
+
     @solution
     def printer_no_duplicates(self, s):
         # 372ms 96.64#
@@ -59,7 +64,7 @@ class Q664(Solution):
             min_ = turns(i+1, j) + 1
             for k in range(i+1, j+1):
                 if s[k] == s[i]:
-                    min_ = min(min_, turns(i+1, k-1) + turns(k, j))
+                    min_ = min(min_, turns(i, k-1) + turns(k+1, j))
             memo[(i, j)] = min_
             return min_
         return turns(0, N-1)
@@ -67,13 +72,15 @@ class Q664(Solution):
 
 def main():
     q = Q664()
-    q.add_args('')
-    q.add_args('a')
-    q.add_args('aaa')
-    q.add_args('aaabbb')
-    q.add_args('aba')
-    q.add_args('caba')
-    q.add_args('tbgtgb') # b -> g -> t -> t => 4
+    q.add_case(q.case('').assert_equal(0))
+    q.add_case(q.case('a').assert_equal(1))
+    q.add_case(q.case('aaa').assert_equal(1))
+    q.add_case(q.case('aaabbb').assert_equal(2))
+    q.add_case(q.case('aba').assert_equal(2))
+    q.add_case(q.case('caba').assert_equal(3))
+    q.add_case(q.case('tbgtgb').assert_equal(4))  # b -> g -> t -> t => 4
+    q.add_case(q.case('abcabcabc').assert_equal(7))
+    q.add_case(q.case('abbbaa').assert_equal(2))
     q.run()
 
 
