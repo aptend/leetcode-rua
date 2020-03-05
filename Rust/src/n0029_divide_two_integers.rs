@@ -22,7 +22,7 @@ pub fn divide(dividend: i32, divisor: i32) -> i32 {
             ans = 1;
         }
     }
-    
+
     dd = dd.abs();
     ds = ds.abs();
     while dd >= ds {
