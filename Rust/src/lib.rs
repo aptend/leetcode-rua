@@ -51,6 +51,7 @@ mod n0268_missing_number;
 mod n0279_perfect_squares;
 mod n0290_word_pattern;
 mod n0313_super_ugly_number;
+mod n0322_coin_change;
 mod n0334_increasing_triplet_subsequence;
 mod n0343_integer_break;
 mod n0344_reverse_string;
