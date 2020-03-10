@@ -6,16 +6,15 @@ pub fn distribute_candies(candies: i32, n: i32) -> Vec<i32> {
     while acc(base, base + round * diff, round + 1) < candies {
         round += 1;
     }
-    let mut ans: Vec<i32>;
-    if round == 0 {
+    let mut ans = if round == 0 {
         // do this branch because step_by denied step = 0
-        ans = vec![0; n as usize];
+        vec![0; n as usize]
     } else {
-        ans = (acc(1, 1 + n * (round - 1), round)..)
+        (acc(1, 1 + n * (round - 1), round)..)
             .step_by(round as usize)
             .take(n as usize)
-            .collect();
-    }
+            .collect()
+    };
     let mut left = candies - acc(base, base + (round - 1) * diff, round);
     let mut need = round * n + 1;
     for x in ans.iter_mut() {

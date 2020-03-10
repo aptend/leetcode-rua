@@ -67,6 +67,7 @@ mod n0442_find_all_duplicates_in_an_array;
 mod n0491_increasing_subsequences;
 mod n0494_target_sum;
 mod n0518_coin_change_2;
+mod n0543_diameter_of_binary_tree;
 mod n0557_reverse_words_in_a_string_iii;
 mod n0560_subarray_sum_equals_k;
 mod n0581_shortest_unsorted_continuous_subarray;
