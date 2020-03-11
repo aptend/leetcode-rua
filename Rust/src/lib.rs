@@ -99,6 +99,7 @@ mod n0997_find_the_town_judge;
 mod n1001_grid_illumination;
 mod n1005_maximize_sum_of_array_after_k_negations;
 mod n1011_capacity_to_ship_packages_within_d_days;
+mod n1013_partition_array_into_three_parts_with_equal_sum;
 mod n1019_next_greater_node_in_linked_list;
 mod n1027_longest_arithmetic_sequence;
 mod n1038_binary_search_tree_to_greater_sum_tree;
