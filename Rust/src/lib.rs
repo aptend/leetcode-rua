@@ -105,6 +105,7 @@ mod n1027_longest_arithmetic_sequence;
 mod n1038_binary_search_tree_to_greater_sum_tree;
 mod n1039_minimum_score_triangulation_of_polygon;
 mod n1043_partition_array_for_maximum_sum;
+mod n1071_greatest_common_divisor_of_strings;
 mod n1081_smallest_subsequence_of_distinct_characters;
 mod n1103_distribute_candies_to_people;
 mod n1155_number_of_dice_rolls_with_target_sum;

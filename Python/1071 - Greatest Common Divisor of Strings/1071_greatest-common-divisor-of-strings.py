@@ -16,10 +16,20 @@ class Q1071(Solution):
                 return s
         return ''
 
+    @solution
+    def gcd_of_strings(self, str1, str2):
+        if str1 + str2 != str2 + str1:
+            return ''
+        a, b = len(str1), len(str2)
+        while b:
+            a, b = b, a % b
+        return str1[:a]
+
 
 def main():
     q = Q1071()
     q.add_case(q.case('ABCABC', 'ABC').assert_equal('ABC'))
+    q.add_case(q.case('ABABAB', 'ABAB').assert_equal('AB'))
     q.add_case(q.case('LEET', 'CODE').assert_equal(''))
     q.run()
 
