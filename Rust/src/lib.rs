@@ -50,6 +50,7 @@ mod n0238_product_of_array_except_self;
 mod n0268_missing_number;
 mod n0279_perfect_squares;
 mod n0290_word_pattern;
+mod n0300_longest_increasing_subsequence;
 mod n0313_super_ugly_number;
 mod n0322_coin_change;
 mod n0334_increasing_triplet_subsequence;
