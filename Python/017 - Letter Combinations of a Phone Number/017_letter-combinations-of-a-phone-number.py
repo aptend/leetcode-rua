@@ -1,5 +1,4 @@
 from leezy import Solution, solution
-import string
 
 
 class Q017(Solution):
