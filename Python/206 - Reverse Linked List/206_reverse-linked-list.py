@@ -37,6 +37,16 @@ class Q206(Solution):
             head = nxt
         return dummy.next
 
+    @solution
+    def reverse_iter_no_dummy(self, head):
+        prev = None
+        while head:
+            nxt = head.next
+            head.next = prev
+            prev = head
+            head = nxt
+        return prev
+
 
 def main():
     q = Q206()
