@@ -1,12 +1,12 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 
 class Q019(Solution):
     @solution
     def removeNthFromEnd(self, head, n):
         # 32ms 89%
-        dummy = LinkedListNode(0)
+        dummy = ListNode(0)
         dummy.next = head
         node = scout = dummy
         for _ in range(n+1):

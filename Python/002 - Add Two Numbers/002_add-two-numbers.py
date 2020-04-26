@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 
 class Q002(Solution):
@@ -7,7 +7,7 @@ class Q002(Solution):
     def addTwoNumbers(self, l1, l2):
         # 84ms
         carry = 0
-        dummy = LinkedListNode()
+        dummy = ListNode()
         tail = dummy
         while l1 or l2:
             s = 0
@@ -20,17 +20,17 @@ class Q002(Solution):
                 l2 = l2.next
 
             carry, v = divmod(s + carry, 10)
-            tail.next = LinkedListNode(v)
+            tail.next = ListNode(v)
             tail = tail.next
         if carry:
-            tail.next = LinkedListNode(carry)
+            tail.next = ListNode(carry)
         return dummy.next
 
 
 def main():
     q = Q002()
     q.set_context(LinkedListContext)
-    make = LinkedListNode.make_linked_list
+    make = ListNode.make_linked_list
     q.add_case(q.case([2, 4, 3], [5, 6, 4])
                 .assert_equal(make([7, 0, 8])))
     q.add_case(q.case([2, 4, 3, 1], [5, 6, 4])

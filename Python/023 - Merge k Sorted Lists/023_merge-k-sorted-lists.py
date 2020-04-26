@@ -1,12 +1,12 @@
 from leezy import solution, Solution
 
-from leezy.assists import LinkedListNode
+from leezy.assists import ListNode
 from heapq import heappop, heappush
 
 class Q023(Solution):
 
     def merge(self, s1, s2):
-        dummy = LinkedListNode()
+        dummy = ListNode()
         tail = dummy
         while s1 and s2:
             if s1.val <= s2.val:
@@ -42,7 +42,7 @@ class Q023(Solution):
                 continue
             heappush(heap, (l.val, i, l))
             lists[i] = l.next
-        dummy = tail = LinkedListNode()
+        dummy = tail = ListNode()
         while heap:
             _, i, node = heappop(heap)
             tail.next, tail = node, node
@@ -59,9 +59,9 @@ def main():
     q = Q023()
     q.add_args([])
     q.add_args([
-        LinkedListNode.make_linked_list([1, 4, 5]), 
-        LinkedListNode.make_linked_list([1, 3, 4]),
-        LinkedListNode.make_linked_list([2, 6])])
+        ListNode.make_linked_list([1, 4, 5]), 
+        ListNode.make_linked_list([1, 3, 4]),
+        ListNode.make_linked_list([2, 6])])
     q.run()
 
 if __name__ == '__main__':

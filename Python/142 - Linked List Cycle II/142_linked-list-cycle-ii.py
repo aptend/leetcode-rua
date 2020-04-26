@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListNode
+from leezy.assists import ListNode
 
 
 class Q142(Solution):
@@ -25,7 +25,7 @@ class Q142(Solution):
 
 def main():
     q = Q142()
-    make = LinkedListNode.make_cycle_list
+    make = ListNode.make_cycle_list
 
     def check_val(val):
         return lambda node: node.val == val

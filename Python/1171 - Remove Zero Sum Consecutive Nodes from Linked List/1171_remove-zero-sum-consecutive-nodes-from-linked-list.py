@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 from collections import OrderedDict
 
@@ -32,7 +32,7 @@ class Q1171(Solution):
             ans.append(nodes[i])
             i = prefix[accum] + 1
 
-        return LinkedListNode.make_linked_list(ans)
+        return ListNode.make_linked_list(ans)
 
     @solution
     def remove_zero_subarray(self, head):
@@ -61,7 +61,7 @@ class Q1171(Solution):
 
     @solution
     def remove_zero_sub_one_pass(self, head):
-        dummy = LinkedListNode(0)
+        dummy = ListNode(0)
         dummy.next = head
         prefix = OrderedDict()
         prefix[0] = dummy
@@ -91,7 +91,7 @@ class Q1171(Solution):
 def main():
     q = Q1171()
     q.set_context(LinkedListContext)
-    make = LinkedListNode.make_linked_list
+    make = ListNode.make_linked_list
     case = make([3, 1])
     q.add_case(q.case([3, 1, 2, 3, -3, -2]).assert_equal(case))
     q.add_case(q.case([1, 2, -3, 3, 1]).assert_equal(case))

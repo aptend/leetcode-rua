@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListNode
+from leezy.assists import ListNode
 
 
 class Q141(Solution):
@@ -30,7 +30,7 @@ class Q141(Solution):
 
 def main():
     q = Q141()
-    make = LinkedListNode.make_cycle_list
+    make = ListNode.make_cycle_list
 
     q.add_case(q.case(make([3, 2, 0, -4], 1)).assert_equal(True))
     q.add_case(q.case(make([1, 2], 0)).assert_equal(True))

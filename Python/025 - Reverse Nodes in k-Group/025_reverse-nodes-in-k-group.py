@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 class Q025(Solution):
     @solution
@@ -7,7 +7,7 @@ class Q025(Solution):
         # 48ms 69.25%
         if head is None or k == 1:
             return head
-        dummy = LinkedListNode('^')
+        dummy = ListNode('^')
         dummy.next = head
         n = 0
         while head:

@@ -1,4 +1,4 @@
-from leezy.assists import LinkedListNode
+from leezy.assists import ListNode
 from random import randint
 
 
@@ -28,7 +28,7 @@ class Q382:
 
 
 def main():
-    q = Q382(LinkedListNode.make_linked_list([1, 2, 3, 4, 5]))
+    q = Q382(ListNode.make_linked_list([1, 2, 3, 4, 5]))
     print([q.getRandom() for _ in range(10)])
 
 

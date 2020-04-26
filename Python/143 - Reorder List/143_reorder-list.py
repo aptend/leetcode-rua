@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 
 class Q143(Solution):
@@ -12,7 +12,7 @@ class Q143(Solution):
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        half2 = LinkedListNode()
+        half2 = ListNode()
         node = slow.next  # this point is tricky, be careful
         slow.next = None
         while node:
@@ -20,7 +20,7 @@ class Q143(Solution):
             node.next = half2.next
             half2.next = node
             node = next_node
-        ans = LinkedListNode()
+        ans = ListNode()
         dummy = ans
         half1 = head
         half2 = half2.next

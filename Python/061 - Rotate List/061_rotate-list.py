@@ -1,5 +1,5 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListNode
+from leezy.assists import ListNode
 
 class Q061(Solution):
     @solution
@@ -32,9 +32,9 @@ class Q061(Solution):
 
 def main():
     q = Q061()
-    q.add_args(LinkedListNode.make_linked_list([1, 2, 3, 4, 5]), 2)
-    q.add_args(LinkedListNode.make_linked_list([1, 2, 3, 4, 5]), 0)
-    q.add_args(LinkedListNode.make_linked_list([]), 0)
+    q.add_args(ListNode.make_linked_list([1, 2, 3, 4, 5]), 2)
+    q.add_args(ListNode.make_linked_list([1, 2, 3, 4, 5]), 0)
+    q.add_args(ListNode.make_linked_list([]), 0)
     q.run()
 
 if __name__ == '__main__':

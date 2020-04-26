@@ -1,12 +1,12 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListContext, LinkedListNode
+from leezy.assists import LinkedListContext, ListNode
 
 
 class Q083(Solution):
     @solution
     def deleteDuplicates(self, head):
         # 32ms 97.06%
-        dummy = LinkedListNode(float('inf'))
+        dummy = ListNode(float('inf'))
         dummy.next = head
         prev = dummy
         while head:

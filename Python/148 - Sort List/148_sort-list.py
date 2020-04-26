@@ -1,12 +1,12 @@
 from leezy import solution, Solution
-from leezy.assists import LinkedListNode, LinkedListContext
+from leezy.assists import ListNode, LinkedListContext
 
 
 class Q148(Solution):
     @solution
     def sortList(self, head):
         def merge(s1, s2):
-            dummy = LinkedListNode()
+            dummy = ListNode()
             tail = dummy
             while s1 and s2:
                 if s1.val <= s2.val:
