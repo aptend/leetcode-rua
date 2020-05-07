@@ -74,9 +74,9 @@ fn main() {
     json_path.push(ENTRY_JSON);
 
     let repo_json = fs::read_to_string(json_path).unwrap();
-    let entry_repo: HashMap<i32, ProblemEntry> = serde_json::from_str(&repo_json).unwrap();
+    let entry_repo: HashMap<String, ProblemEntry> = serde_json::from_str(&repo_json).unwrap();
 
-    let entry = &entry_repo[&id];
+    let entry = &entry_repo[&id.to_string()];
     let file_name = format!("n{:04}_{}", id, entry.title_slug.replace("-", "_"));
     let file_path = Path::new("./src").join(format!("{}.rs", file_name));
 

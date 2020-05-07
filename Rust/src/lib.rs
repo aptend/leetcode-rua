@@ -1,6 +1,20 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
+
 mod bisect;
 
 mod n0003_longest_substring_without_repeating_characters;
@@ -13,6 +27,7 @@ mod n0011_container_with_most_water;
 mod n0014_longest_common_prefix;
 mod n0015_3sum;
 mod n0020_valid_parentheses;
+mod n0021_merge_two_sorted_lists;
 mod n0022_generate_parentheses;
 mod n0026_remove_duplicates_from_sorted_array;
 mod n0029_divide_two_integers;
