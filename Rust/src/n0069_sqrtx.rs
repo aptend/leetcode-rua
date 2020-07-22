@@ -11,14 +11,11 @@ pub fn my_sqrt_iter(x: i32) -> i32 {
 }
 
 pub fn my_sqrt(x: i32) -> i32 {
-    if x == 0 || x == 1 {
-        return x;
-    }
-    let mut lo = 0;
+    let mut lo = 1; // starts with 1, avoiding special case where x <= 1
     let mut hi = x;
     while lo <= hi {
         let mid = lo + (hi - lo) / 2;
-        if mid > x / mid {
+        if mid > x / mid {  // no overflow
             hi = mid - 1;
         } else {
             lo = mid + 1;
