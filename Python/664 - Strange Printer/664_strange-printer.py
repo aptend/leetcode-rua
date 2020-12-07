@@ -49,25 +49,26 @@ class Q664(Solution):
 
     @solution
     def printer_no_duplicates(self, s):
-        # 372ms 96.64#
+        # 356ms 99.05%
         s = ''.join([a for a, b in zip(s, '#'+s) if a != b])
         N = len(s)
-        memo = {}
+        memo = [[0]*N for _ in range(N)]
 
-        def turns(i, j):
+        def count(i, j):
             if i > j:
                 return 0
-            if i == j:
+            elif i == j:
                 return 1
-            if (i, j) in memo:
-                return memo[(i, j)]
-            min_ = turns(i+1, j) + 1
+            if memo[i][j] > 0:
+                return memo[i][j]
+            pivot = s[i]
+            optimal = 1 + count(i+1, j)
             for k in range(i+1, j+1):
-                if s[k] == s[i]:
-                    min_ = min(min_, turns(i, k-1) + turns(k+1, j))
-            memo[(i, j)] = min_
-            return min_
-        return turns(0, N-1)
+                if s[k] == pivot:
+                    optimal = min(optimal, count(i+1, k)+count(k+1, j))
+            memo[i][j] = optimal
+            return optimal
+        return count(0, N-1)
 
 
 def main():
