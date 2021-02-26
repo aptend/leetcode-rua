@@ -1,5 +1,5 @@
 from leezy import Solution, solution
-from leezy.assists import TreeContext
+from leezy.assists import TreeContext, TreeNode
 
 
 class Q426(Solution):
@@ -27,6 +27,25 @@ class Q426(Solution):
             r_tail.right = l_head
             l_head.left = r_tail
         return l_head
+
+    @solution
+    def convert(self, root):
+        if root is None:
+            return
+        dummy = TreeNode('^')
+        self.tail = dummy
+        def inorder(node):
+            if node is None:
+                return
+            inorder(node.left)
+            self.tail.right = node
+            node.left = self.tail
+            self.tail = node
+            inorder(node.right)
+        inorder(root)
+        dummy.right.left = self.tail
+        self.tail.right = dummy.right
+        return dummy.right
 
 
 def main():

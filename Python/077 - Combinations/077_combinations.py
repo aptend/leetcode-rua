@@ -1,9 +1,8 @@
-from leezy import Solution, solution, timeit
+from leezy import Solution, solution
 
 
 class Q077(Solution):
 
-    @timeit
     @solution
     def combine(self, n, k):
         if n == k:
@@ -30,10 +29,10 @@ class Q077(Solution):
 
 def main():
     q = Q077()
-    q.add_args(4, 2)
-    q.add_args(4, 4)
-    q.add_args(4, 1)
-    q.add_args(20, 10)
+    q.add_case(q.case(4, 2))
+    q.add_case(q.case(4, 4))
+    q.add_case(q.case(4, 1))
+    q.add_case(q.case(20, 10))
     q.run()
 
 

@@ -34,7 +34,7 @@ class Q887(Solution):
             save = memo.get((k, n), None)
             if save:
                 return save
-            # we use binary search to find max(dp(k-1, m), dp(k, n-m))
+            # we use binary search to find min(dp(k-1, m), dp(k, n-m))
             # dp(k-1, m) increases with m
             # dp(k, n-m) decreases with m
             # so dp(k-1, m) - dp(k, n-m) is increasing
