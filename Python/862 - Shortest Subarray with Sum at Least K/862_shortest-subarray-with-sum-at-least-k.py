@@ -8,8 +8,10 @@ A = [2, -1, 2, 1]  K = 3
 B = [0, 2, 1, 3, 4]
 B[i] - B[j] >= K   given i, want nearest j
 
-maintain an increasing queue
+maintain an increasing index queue
 q = [0] -> [0, 1] -> [0, 2] -> [2, 3] -> [3, 4]
+values in B
+q = [0] -> [0, 2] -> [0, 1] -> [1, 3] -> [3, 4]
 
 This problem is awesome
 """
@@ -34,6 +36,7 @@ class Q862(Solution):
                 # we don't need to consider this index any more
                 q.pop()
             q.append(i)
+            print(q)
         return ans if ans < N + 1 else -1
 
 
