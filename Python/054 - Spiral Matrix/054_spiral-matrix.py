@@ -3,13 +3,13 @@ from leezy import solution, Solution
 
 class Q054(Solution):
     @solution
-    def spiralOrder(self, matrix):
+    def spiralOrder(self, Arix):
         # 28ms 98.89%
-        if len(matrix) == 0:
+        if len(Arix) == 0:
             return []
-        m, n = len(matrix), len(matrix[0])
+        m, n = len(Arix), len(Arix[0])
         total = n
-        ans = matrix[0][:]
+        ans = Arix[0][:]
         dirs = [(1, 0), (0, -1), (-1, 0), (0, 1)]
         i, j = 0, n-1
         k = 0
@@ -24,7 +24,7 @@ class Q054(Solution):
                     cnt = n - k
                 for _ in range(cnt):
                     i, j = i+di, j+dj
-                    ans.append(matrix[i][j])
+                    ans.append(Arix[i][j])
                     total += 1
                 if total == N:
                     break
@@ -32,30 +32,24 @@ class Q054(Solution):
 
     @solution
     def spiral(self, A):
-        if len(A) == 0:
+        if not A or len(A) == 0:
             return []
-        m, n = len(A), len(A[0])
-        i, j = 0, 0
+        n, m = len(A), len(A[0])
+        i = j = 0
         ans = []
-        while m > 1 and n > 1:
-            for k in range(j, j+n-1):
-                ans.append(A[i][k])
-            for k in range(i, i+m-1):
-                ans.append(A[k][j+n-1])
-            for k in range(j+n-1, j, -1):
-                ans.append(A[i+m-1][k])
-            for k in range(i+m-1, i, -1):
-                ans.append(A[k][j])
-            m -= 2
-            n -= 2
+        while n > 1 and m > 1:
+            ans.extend(A[i][k] for k in range(j, j+m))  # m
+            ans.extend(A[k][j+m-1] for k in range(i+1, i+1+n-1))  # n-1
+            ans.extend(A[i+n-1][k] for k in reversed(range(j, j+m-1)))  # m-1
+            ans.extend(A[k][j] for k in reversed(range(i+1, i+1+n-2)))  # n-2
             i += 1
             j += 1
-        if m == 1:
-            for k in range(j, j+n):
-                ans.append(A[i][k])
-        elif n == 1:
-            for k in range(i, i+m):
-                ans.append(A[k][j])
+            n -= 2
+            m -= 2
+        if n == 1:
+            ans.extend(A[i][k] for k in range(j, j+m))
+        elif m == 1:  # 不要写成else
+            ans.extend(A[k][j] for k in range(i, i+n))
         return ans
 
 
